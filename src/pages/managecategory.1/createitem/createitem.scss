@@ -1,0 +1,77 @@
+page-createitem{
+
+  .padding-t{
+    padding-bottom: 0;
+    // padding-left:5%;
+    font-size: 16px;
+     margin-left:8%;
+    margin-right:7%;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: gray;
+    margin-top:10px;
+}
+.item-md{
+    padding: 0px;
+}
+.item-a{
+    padding-left:7%;
+}
+.item-ios{
+    padding: 0px;
+}
+.padding-a{
+    padding-left:15%;
+}
+.segment-md .segment-button {
+
+    font-weight:bold;
+    font-size: 14px;
+    color: #ff4400;
+}
+.icon{
+    color: white; 
+}
+.fabStartBtn {
+//font-size: 72px;
+ width: 55px;
+    height: 55px;
+    color:#ff4400;
+    font-weight:bold;
+}
+.SwipedTabs-activeTab{
+    color:#ff4400 !important
+    }
+.scroll-content{
+    overflow-y: scroll;
+}
+.select1{
+color:#ff4400;
+border-color:#ff4400;
+height:100%;border: 1.2px solid #ff4400;
+//border-radius:4px;
+max-width:100%;
+margin-left:7%;
+margin-right:7%;
+ //padding-left:6px;
+}
+.select-md .select-icon{
+    height:15px;
+}
+   .action-sheet-group{
+          overflow: scroll;
+          max-height: 400px;
+    }
+    .action-sheet-container{
+        overflow-y: scroll;
+        height:400px;
+    }
+    .font_size{
+    font-size: 25px;
+    margin-left:7%;
+    padding-left:7%;
+
+}
+
+
+}

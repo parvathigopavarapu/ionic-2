@@ -1,0 +1,53 @@
+
+<ion-header style="color:#ff4400">
+    <ion-navbar>
+        <ion-buttons end>
+        <button ion-button class="btn1" (click)="gotoorderspage()">
+          <ion-icon name="close" class="icon3"></ion-icon>
+        </button>
+        </ion-buttons>
+            <ion-title style="text-align:center"><b>Table Reservation</b></ion-title>     
+    </ion-navbar>
+</ion-header>
+<ion-content>
+        <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+            <ion-label class="text-center" id="text-middle"><b>Reject Reservation</b></ion-label>
+        </ion-item>
+    <p class="font" style="text-align:center"><b><u>Step 1 of 2</u></b></p>
+   
+   <ion-item-group no-lines no-padding>
+              
+        <ion-item no-lines no-padding (click) = "gotocollectionspage(item)">
+            <p class="padding-a" id = "color">Name: <b>{{item.name}}</b></p>
+            <p class="padding-a" id = "color">Phone: <b>{{item.phone}}</b></p>
+           <p class="padding-a" id = "color">Email:<b> {{item.email}}</b></p>
+           <ion-icon name="contacts" style="color:#666666;font-size:20px" item-end>{{item.num}}</ion-icon>
+            <p class="padding-a" id = "color">Reserved Time: <b> {{item.time}}</b></p>
+        </ion-item>
+    </ion-item-group>
+
+    <p class="color"><b class="font">Rejected Time:4:30</b></p>
+    <p class="pading"><b>Select rejection reason:</b></p>
+    <ion-row>
+        <ion-col col-12 >
+            <ion-select class="pading" placeholder="No Availabulity"  interface="popover">
+                <ion-option>Late Delivery</ion-option>
+                <ion-option>Bad Quality</ion-option>
+            </ion-select>
+        </ion-col>
+    </ion-row>
+    <div class="pading" >
+        <p ><b>Notes: </b></p>
+    </div>
+    <div>
+        <textarea class="textarea" placeholder="Notes"></textarea>
+    </div>
+   
+    <ion-row class="padding-btn">
+
+        <ion-col col-6 >
+            <button ion-button (click)="gotostep2()"  class="button-class1">REJECT</button></ion-col>
+        <ion-col col-6 >
+            <button ion-button (click)="gotoorderspage()" class="button-class1">CANCEL</button></ion-col>
+    </ion-row>  
+</ion-content>

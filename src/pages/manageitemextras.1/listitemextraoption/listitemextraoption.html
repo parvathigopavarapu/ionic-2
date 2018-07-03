@@ -1,0 +1,36 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="back-arrow"></ion-icon>
+    </button>
+        <ion-title style="background-color:white;color:#ff4400"><b style="color:#ff4400">{{name.day}}</b></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item class="label-neworders" style="background-color :#ff4400" no-padding>
+        <ion-label class="text-center" id="text-middle"><b>Item Extra Options List</b></ion-label>
+    </ion-item>
+      <ion-list border-bottom="none">
+        <ion-item-sliding *ngFor="let item of items;let odd=odd; let even=even;">
+            <ion-item [ngClass]="{ odd: odd, even: even }" text-wrap no-lines style="height:60px;" (click)="gotoanotherlist()" >
+                <ion-row>
+                    <ion-col col-8>{{item.number}}. {{ item.food }} <p style="padding-left:15px"> {{item.detail}}</ion-col>
+                    <ion-col col-4>${{item.price}}</ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button (click)="editfields()" class="rowz" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" style="font-size:25px" ></ion-icon>
+                 EDIT 
+                </button>
+                <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px" ></ion-icon>
+                 DELETE
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-footer style="position:fixed;margin-bottom:50px;" no-border>
+    <button ion-button (click)="createItemExtra()" style="margin-top:0px;margin-left:180px;background:none;float:right;background-color:none;box-shadow:none;width:100px;height:100px">   
+           <ion-icon name="add-circle" style="color:#ff4400;font-size:70px"></ion-icon>
+    </button>
+    </ion-footer>
+</ion-content>

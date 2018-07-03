@@ -1,0 +1,166 @@
+<ion-header style="color:#ff4400">
+    <ion-navbar>
+        <ion-buttons end>
+        <button ion-button class="btn1" (click)="gotoorderspage()">
+          <ion-icon name="close" class="icon3"></ion-icon>
+        </button>
+        </ion-buttons>
+        <div *ngIf="badge == 'Direction Order'">
+            <ion-title style="text-align:center"><b>Delivery Direction</b></ion-title>
+        </div>
+        <div *ngIf="badge != 'Direction Order'">
+            <ion-title ><b style="text-align:center;color:#ff4400">000245(NEW)</b></ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+<ion-content *ngIf="badge== 'Direction Order'">
+    <ion-item class="label2"><b>Jp Nagar, Bangalore</b></ion-item>
+    <img style="width:100%;height:100%" src="assets/icon/map.jpg" />
+</ion-content>
+<ion-content style="color:#ff4400;">
+    <!--<div *ngFor='let item of badge'>-->
+    <div *ngIf="badge == 'Accept Order'">
+        <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+            <ion-label class="text-center" id="text-middle"><b>Accept Order</b></ion-label>
+        </ion-item>
+    </div>
+    <div *ngIf="badge== 'Reject Order'">
+        <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+            <ion-label class="text-center" id="text-middle"><b>Reject Order</b></ion-label>
+        </ion-item>
+    </div>
+
+    <div *ngIf="badge == 'Deliver Order'">
+        <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+            <ion-label class="text-center" id="text-middle"><b>Deliver Order</b></ion-label>
+        </ion-item>
+    </div>
+
+    <div *ngIf="badge == 'Print Order'">
+        <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+            <ion-label class="text-center" id="text-middle"><b>Print Receipt</b></ion-label>
+        </ion-item>
+    </div>
+
+    <p class="text-class1" *ngIf="badge != 'Direction Order'"><b *ngIf="badge != 'Print Order'"><u>Step 1 of 2</u></b></p>
+    <p class="text-class1" *ngIf="badge == 'Print Order'"><b><u>Step 1 of 1</u></b></p>
+    <ion-item padding-left no-lines *ngIf="badge != 'Direction Order'">
+        <ion-row>
+            <b class="pad">Parvathi Gopavarapu</b>
+            <ion-icon class="icon-icon" style="font-size:20px" name="call"></ion-icon><span class="pad">09542037170</span><span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+            <span class="pad"> Estimated Delivery Time :<b> 02:18</b><span  padding-left class="margin">$163.50</span></span>
+        </ion-row>
+        <ion-row>
+            <ion-col class="pad">
+                <b>(Already Due)</b></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <span class="pad"> Payment: <b>CASH (NOT PAID)</b></span></ion-col>
+        </ion-row>
+    </ion-item>
+
+    <div class="div1" *ngIf="badge == 'Print Order'">
+        <ion-item class="text"> <b>Printing....</b></ion-item>
+
+        <ion-row>
+            <ion-item class="text2" no-lines> Printer Service
+                <ion-icon class="icon1" item-end name="checkbox-outline"></ion-icon>
+            </ion-item>
+        </ion-row>
+
+        <ion-row>
+            <ion-item class="text2" no-lines> Printer Connected
+                <ion-icon class="icon1" item-end name="checkbox-outline"></ion-icon>
+            </ion-item>
+        </ion-row>
+
+        <ion-row class="padding-btn">
+            <ion-col col-12>
+                <button ion-button class="button button-full" id="button1" (click)='print(badge)'><span class="padding-span">Re-Print Receipt</span></button></ion-col>
+        </ion-row>
+        <ion-row class="padding-btn">
+            <ion-col col-12>
+                <button ion-button class="button button-full" id="button1" (click)='print(badge)'><span class="padding-span">Settings</span></button></ion-col>
+        </ion-row>
+    </div>
+
+    <!--p class="color" *ngIf="badge == 'Accept Order'"><b class="color">Est. Delivery Time: 8:30pm (in 58 mins)</b></p>
+    <p class="color" *ngIf="badge == 'Reject Order'"><b class="color">Rejected Time: 8:30pm (in 58 mins)</b></p>
+    <p class="color" *ngIf="badge == 'Deliver Order'"><b class="color">Your order has been dispatched</b></p-->
+    <p class="pading" *ngIf="badge == 'Reject Order'"><b class="pading">Select rejection reason:</b></p>
+    <ion-row *ngIf="badge == 'Reject Order'">
+        <ion-col col-12 class="paddding">
+            <ion-select class="select" placeholder="reason "  interface="popover">
+                <ion-option>Late Delivery</ion-option>
+                <ion-option>Bad Quality</ion-option>
+            </ion-select>
+        </ion-col>
+    </ion-row>
+    <p class="pading" *ngIf="badge == 'Accept Order'"><b class="pading">Deliver Time::</b></p>
+    <ion-row *ngIf="badge == 'Accept Order'">
+        <ion-col col-12 class="paddding">
+            <ion-select class="select" placeholder="8:30pm (58 mins)" interface="popover">
+                     <ion-option>4:30pm (0 mins) </ion-option>
+                    <ion-option>4:40pm (10 mins) </ion-option>
+                    <ion-option>4:50pm (20 mins)</ion-option>
+                    <ion-option>5:00pm (30 mins) </ion-option>
+                    <ion-option>5:10pm (40 mins)</ion-option>
+                    <ion-option>5::20pm (50 mins)</ion-option>
+                    <ion-option>5:30pm (60 mins)</ion-option>
+                    <ion-option>5:40pm (70 mins)</ion-option>
+                    <ion-option>5:50pm (80 mins)</ion-option>
+                    <ion-option>6:00pm (90 mins)</ion-option>
+                    <ion-option>6:10pm (100 mins)</ion-option>
+                    <ion-option>6:20pm (110 mins)</ion-option>
+                    <ion-option>6:30pm (120 mins)</ion-option>
+            </ion-select>
+        </ion-col>
+    </ion-row>
+    <p class="pading" *ngIf="badge == 'Deliver Order'"><b class="pading">Deliver Time::</b></p>
+    <ion-row *ngIf="badge == 'Deliver Order'">
+        <ion-col col-12 class="paddding">
+            <ion-select class="select" placeholder="8:30pm (58 mins)"  interface="popover">
+                    <ion-option>4:30pm (0 mins) </ion-option>
+                    <ion-option>4:40pm (10 mins) </ion-option>
+                    <ion-option>4:50pm (20 mins)</ion-option>
+                    <ion-option>5:00pm (30 mins) </ion-option>
+                    <ion-option>5:10pm (40 mins)</ion-option>
+                    <ion-option>5::20pm (50 mins)</ion-option>
+                    <ion-option>5:30pm (60 mins)</ion-option>
+                    <ion-option>5:40pm (70 mins)</ion-option>
+                    <ion-option>5:50pm (80 mins)</ion-option>
+                    <ion-option>6:00pm (90 mins)</ion-option>
+                    <ion-option>6:10pm (100 mins)</ion-option>
+                    <ion-option>6:20pm (110 mins)</ion-option>
+                    <ion-option>6:30pm (120 mins)</ion-option>
+            </ion-select>
+        </ion-col>
+    </ion-row>
+    <div class="pading" *ngIf="badge != 'Direction Order'">
+        <p class="pading" *ngIf="badge != 'Print Order'"><b>Notes: </b></p>
+    </div>
+    <div *ngIf="badge != 'Print Order'">
+        <textarea class="textarea" placeholder="Notes" *ngIf="badge != 'Direction Order'"></textarea>
+    </div>
+    <ion-row *ngIf="badge == 'Accept Order'" class="padding-btn">
+        <ion-col col-6>
+            <button ion-button (click)="gotostep2('Accept')" class="button-class">ACCEPT</button></ion-col>
+        <ion-col col-6>
+            <button ion-button (click)="gotoorderspage()" class="button-class1">CANCEL</button></ion-col>
+    </ion-row>
+    <ion-row *ngIf="badge == 'Reject Order'" class="padding-btn">
+
+        <ion-col col-6>
+            <button ion-button (click)="gotostep2('Reject')"  class="button-class">REJECT</button></ion-col>
+        <ion-col col-6>
+            <button ion-button (click)="gotoorderspage()" class="button-class1">CANCEL</button></ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="badge == 'Deliver Order'" class="padding-btn">
+        <ion-col col-6>
+            <button ion-button (click)="gotostep2('Deliver')"  class="button-class">DELIVER</button></ion-col>
+        <ion-col col-6>
+            <button ion-button (click)="gotoorderspage()"  class="button-class1">CANCEL</button></ion-col>
+    </ion-row>
+</ion-content>

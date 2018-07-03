@@ -1,0 +1,64 @@
+page-collection{
+.custon_button{
+    width: '50%'
+}
+.text-center{
+    text-align: center
+}
+.my-alert{
+    color:#ff4400;
+ 
+}
+.alert-radio-group{
+    height: 45px;
+}
+.icon-class{
+    font-size: 30px;
+    color: white;
+   
+}
+.padding-span{
+   text-align: center;
+   padding-left:10px;
+
+}
+.scroll-content{
+    overflow-y: scroll;
+}
+ion-item.label-neworders.item.item-block.item-ios{
+    // margin-top:10px;
+     vertical-align: middle!important;
+      text-align: center;
+}
+.class_button{
+    color: #ff4400;
+}
+.pad{
+    padding-bottom:6px;
+}
+.label-ios{
+  margin: 0px;
+}
+.margin{
+   // margin-left: 40px;
+    color:gray;
+}
+.padding-btn{
+    padding-left:7%;
+    padding-right:8%;
+    
+}
+.toolbar-title-ios {
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: #ff4400;
+    pointer-events: auto;
+}
+
+::-webkit-scrollbar {
+  border:none;
+  width:0;
+  background: none;
+}
+}

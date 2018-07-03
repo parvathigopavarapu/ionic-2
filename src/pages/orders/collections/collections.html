@@ -1,0 +1,182 @@
+<ion-header style="color:#ff4400">
+  <ion-navbar>
+    <!--button ion-button (click)='gotoOrdersPage(badge)' align-title="center">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button-->
+    <div *ngIf="badge.subTitle == 'New Orders List'">
+      <ion-title style="text-align:center"><b>000245(New )</b></ion-title>
+    </div>
+    <div *ngIf="badge.subTitle == 'Accepted Orders List'">
+      <ion-title style="text-align:center"><b>000245(Accepted )</b></ion-title>
+    </div>
+    <div *ngIf="badge == 'Accepted Orders List'">
+      <ion-title style="text-align:center"><b>000245(Accepted )</b></ion-title>
+    </div>
+    <div *ngIf="badge.subTitle == 'Delivered Orders List'">
+      <ion-title style="text-align:center"><b>000245(Delivered)</b></ion-title>
+    </div>
+    <div *ngIf="badge.subTitle == 'Rejected Orders List'">
+      <ion-title style="text-align:center"><b>000245(Rejected)</b></ion-title>
+    </div>
+  </ion-navbar>
+</ion-header>
+<ion-content style="color:#ff4400;">
+  <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+    <ion-label class="text-center" id="text-middle"><b>COLLECTION </b>(25 items - Already Due)</ion-label>
+  </ion-item>
+  <ion-item ion-item class="class_button" (click)="itemTapped(orders,items.badge)" padding-left>
+    <ion-row>
+      <b class="pad">Parvathi  </b>
+      <ion-icon style="font-size:20px;padding-left:10px;padding-right:5px;" name="call"></ion-icon>09542037170<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+      <span class="pad"> Estimated Delivery Time :<b> 02:18</b><span  padding-left class="margin">$163.50</span></span>
+
+      <span class="pad">
+        <b>(Already Due)</b></span>
+    </ion-row>
+    <ion-row>
+      <span class="pad"> Payment: <b>CASH (NOT PAID)</b></span>
+    </ion-row>
+  </ion-item>
+  <ion-item style="color:#ff4400;" no-lines>Item details</ion-item>
+  <ion-item-group style="color:#ff4400;;padding-top:4px">
+    <ion-item-divider light class="class_button-background"><b>Starters</b></ion-item-divider>
+    <ion-item style="color:#ff4400;">
+      <ion-row>
+        <ion-col col-6> 1. Kakori Kebab </ion-col>
+        <ion-col col-3> x 1</ion-col>
+        <ion-col col-3 padding-right>$12.50</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6> 2. Chilli Chicken</ion-col>
+        <ion-col col-3> x 1</ion-col>
+        <ion-col col-3 padding-right>$10.50</ion-col>
+      </ion-row>
+      <!--ion-row>
+        <ion-col col-6> 3. Paneer Tikkas </ion-col>
+        <ion-col col-3> x 1</ion-col>
+        <ion-col col-3 padding-right>$13.50</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6> 4. Dal ki Tikki </ion-col>
+        <ion-col col-3> x 1</ion-col>
+        <ion-col col-3 padding-right>$10.50</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6>5.Cheese Balls </ion-col>
+        <ion-col col-3> x 1</ion-col>
+        <ion-col col-3 padding-right>$17.50</ion-col>
+      </ion-row-->
+    </ion-item>
+      <ion-item-divider light class="class_button-background"><b>Curries</b></ion-item-divider>
+    <ion-item style="color:#ff4400;">
+      <ion-row>
+        <ion-col col-6> 1. Kakori Kebab </ion-col>
+        <ion-col col-3> x 1</ion-col>
+        <ion-col col-3 padding-right>$12.50</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6> 2. Chilli Chicken</ion-col>
+        <ion-col col-3> x 1</ion-col>
+        <ion-col col-3 padding-right>$10.50</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item style="color:#ff4400;">
+      <ion-row>
+        <ion-col col-7 style="text-align:center"><b>Items Total</b></ion-col>
+        <ion-col col-2></ion-col>
+        <ion-col col-3 padding-right>$74.50</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item style="color:#ff4400;">
+      <ion-row>
+        <ion-col col-7 style="text-align:center"><b>Discount</b></ion-col>
+        <ion-col col-2></ion-col>
+        <ion-col col-3 padding-right>$21.00</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-7 style="text-align:center"><b>Voucher Discount</b></ion-col>
+        <ion-col col-2></ion-col>
+        <ion-col col-3 padding-right>$22.00</ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-7 style="text-align:center"><b>Delivery</b></ion-col>
+        <ion-col col-2></ion-col>
+        <ion-col col-3 padding-right>$80.00</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item style="color:#ff4400;">
+      <ion-row>
+        <ion-col col-7 style="text-align:center"><b>Total</b></ion-col>
+        <ion-col col-2></ion-col>
+        <ion-col col-3 padding-right>$74.50</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item style="color:#ff4400;">
+
+      <ion-row>
+        <ion-col><b>Order Notes:</b></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col col-6><b>Created At:</b></ion-col>
+        <ion-col style="text-align:right" padding-right>2015-4-31, 23.45</ion-col>
+      </ion-row>
+    </ion-item>
+    <ion-item style="color:#ff4400;">
+      <ion-row>
+        <ion-col col-8><b>Customer details:</b></ion-col>
+        <ion-col col-4>parvathi</ion-col>
+      </ion-row>
+
+    </ion-item>
+    <ion-item style="color:#ff4400;">
+      <ion-row>
+        <ion-col col-4><b>Call Custmer:</b></ion-col>
+        <ion-col col-8>
+          <ion-icon name="call" style="font-size:25px;"></ion-icon> 9542037170</ion-col>
+      </ion-row>
+    </ion-item>
+  </ion-item-group>
+
+  <div *ngIf="badge.subTitle == 'New Orders List'">
+    <ion-row class="padding-btn">
+      <ion-col col-6>
+        <button ion-button (click)="acceptOrder(q,badge)" style="width:100%;margin-bottom:25%">Accept</button></ion-col>
+      <ion-col col-6>
+        <button ion-button (click)="rejectOrder(h,badge)" style="width:100%;margin-bottom:25%">Reject</button></ion-col>
+    </ion-row>
+  </div>
+
+  <div *ngIf="badge.subTitle == 'Accepted Orders List'">
+    <ion-row class="padding-btn">
+      <ion-col col-12>
+        <button ion-button (click)="deliverorder(x,badge)" class="button button-full" style="width:100%!important"><ion-icon class="icon-class" name="car" item-first></ion-icon><span class="padding-span"> DELIVER</span></button></ion-col>
+    </ion-row>
+    <ion-row class="padding-btn">
+      <ion-col col-12>
+        <button ion-button (click)="print(x,badge)" class="button button-full" style="width:100%!important"><ion-icon class="icon-class" name="print" item-first></ion-icon><span class="padding-span">PRINT RECEIPT</span></button></ion-col>
+    </ion-row>
+    <ion-row class="padding-btn">
+      <ion-col col-12>
+        <button ion-button class="button button-full" style="width:100%!important"><ion-icon class="icon-class" name="call" item-first></ion-icon><span class="padding-span">CALL CUSTOMER</span></button></ion-col>
+    </ion-row>
+    <ion-row class="padding-btn">
+      <ion-col col-12>
+        <button ion-button (click)="direction()" class="button button-full" style="width:100%!important;margin-bottom:25%"><ion-icon class="icon-class" name="navigate" item-first></ion-icon><span class="padding-span">DIRECTION</span></button></ion-col>
+    </ion-row>
+  </div>
+
+
+  <div *ngIf="badge.subTitle == 'Delivered Orders List'">
+    <ion-row class="padding-btn">
+      <ion-col col-12>
+        <button ion-button (click)="print(x,badge)" class="button button-full" style="width:100%!important;margin-bottom:25%"><ion-icon class="icon-class" name="print" item-first></ion-icon><span class="padding-span">PRINT RECEIPT</span></button></ion-col>
+    </ion-row>
+  </div>
+  <div *ngIf="badge.subTitle == 'Rejected Orders List'">
+    <ion-row class="padding-btn">
+      <ion-col col-12>
+        <button ion-button class="button button-full" style="width:100%!important;margin-bottom:25%"><span class="padding-span">UNDO REJECT</span></button></ion-col>
+    </ion-row>
+  </div>
+
+</ion-content>

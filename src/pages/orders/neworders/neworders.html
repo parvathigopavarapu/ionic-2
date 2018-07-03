@@ -1,0 +1,186 @@
+<ion-header style="color:#ff4400">
+  <ion-navbar style="text-align:center;color:#ff4400;">
+    <button ion-button menuToggle menu-close (click)="gotoOrderpage()">
+    <ion-icon style="font-size:40px;color:#ff4400;" name="arrow-back"></ion-icon>
+     </button>
+    <ion-title>{{items.subTitle}}</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content *ngIf="items.subTitle == 'New Orders List'">
+  <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+    <ion-label class="text-center" id="text-middle"><b>{{items.badge}} {{items.subTitle}}</b></ion-label>
+  </ion-item>
+  <ion-item-group *ngFor="let orders of order" no-padding>
+    <ion-item-divider class="class_button-background"><b style="vertical-align:center!important;margin-bottom:40px">{{orders.dates}}</b></ion-item-divider>
+    <ion-item ion-item class="class_button" (click)="itemTapped(orders,items)" no-padding detail-push no-lines>
+      <ion-row>
+        <b class="pad">Parvathi  </b>
+        <ion-icon id="icon_size" name="call"></ion-icon>{{orders.phone}}<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+        <span class="pad"> Estimated Delivery Time : <b>02:18</b><span class="margin" padding-left>$163.50</span></span>
+      </ion-row>
+      <ion-row>
+        <ion-col class="pad">
+          <b>(Already Due)</b></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <span class="pad"> Payment: <b>PAYPAL (PAID)</b></span></ion-col>
+      </ion-row>
+
+    </ion-item>
+
+    <div *ngIf="orders.dates == '2015-3-21'">
+      <hr>
+      <ion-item ion-item class="class_button" (click)="itemTapped(orders,items)" no-padding detail-push no-lines>
+        <ion-row>
+          <b class="pad">Parvathi  </b>
+          <ion-icon id="icon_size" name="call"></ion-icon>{{orders.phone}}<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+          <span class="pad"> Estimated Delivery Time :<b> 02:18</b><span class="margin" padding-left>$163.50</span></span>
+        </ion-row>
+        <ion-row>
+          <ion-col class="pad">
+            <b>(Already Due)</b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <span class="pad"> Payment: <b>PAYPAL (PAID)</b></span></ion-col>
+        </ion-row>
+      </ion-item>
+   
+
+    </div>
+  </ion-item-group>
+</ion-content>
+<ion-content *ngIf="items.subTitle == 'Accepted Orders List'">
+  <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+    <ion-label class="text-center" id="text-middle">{{items.badge}} {{items.subTitle}}</ion-label>
+  </ion-item>
+  <ion-item-group *ngFor="let orders of order" no-padding>
+    <ion-item-divider class="class_button-background"><b style="vertical-align:center!important;margin-bottom:40px">{{orders.dates}}</b></ion-item-divider>
+    <ion-item ion-item class="class_button" (click)="itemTapped(orders,items)" no-padding detail-push no-lines>
+      <ion-row>
+        <b class="pad">Parvathi  </b>
+        <ion-icon id="icon_size" name="call"></ion-icon>{{orders.phone}}<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+        <span class="pad"> Estimated Delivery Time : <b>02:18</b><span class="margin" padding-left>$163.50</span></span>
+      </ion-row>
+      <ion-row>
+        <ion-col class="pad">
+          <b>(Already Due)</b></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <span class="pad"> Payment: <b>PAYPAL (PAID)</b></span></ion-col>
+      </ion-row>
+
+    </ion-item>
+
+    <div *ngIf="orders.dates == '2015-3-21'">
+      <hr>
+      <ion-item ion-item class="class_button" (click)="itemTapped(orders,items)" no-padding detail-push no-lines>
+        <ion-row>
+          <b class="pad">Parvathi  </b>
+          <ion-icon id="icon_size" name="call"></ion-icon>{{orders.phone}}<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+          <span class="pad"> Estimated Delivery Time :<b> 02:18</b><span class="margin" padding-left>$163.50</span></span>
+        </ion-row>
+        <ion-row>
+          <ion-col class="pad">
+            <b>(Already Due)</b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <span class="pad"> Payment: <b>PAYPAL (PAID)</b></span></ion-col>
+        </ion-row>
+      </ion-item>
+    </div>
+  </ion-item-group>
+</ion-content>
+
+
+<ion-content *ngIf="items.subTitle == 'Delivered Orders List'">
+  <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+    <ion-label class="text-center" id="text-middle">{{items.badge}} {{items.subTitle}}</ion-label>
+  </ion-item>
+  <ion-item-group *ngFor="let orders of order" no-padding>
+    <ion-item-divider class="class_button-background"><b style="vertical-align:center!important;margin-bottom:40px">{{orders.dates}}</b></ion-item-divider>
+    <ion-item ion-item class="class_button" (click)="itemTapped(orders,items)" no-padding detail-push no-lines>
+      <ion-row>
+        <b class="pad">Parvathi  </b>
+        <ion-icon id="icon_size" name="call"></ion-icon>{{orders.phone}}<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+        <span class="pad"> Estimated Delivery Time : <b>02:18</b><span class="margin" padding-left>$163.50</span></span>
+      </ion-row>
+      <ion-row>
+        <ion-col class="pad">
+          <b>(Already Due)</b></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <span class="pad"> Payment: <b>PAYPAL (PAID)</b></span></ion-col>
+      </ion-row>
+
+    </ion-item>
+
+    <div *ngIf="orders.dates == '2015-3-21'">
+      <hr>
+      <ion-item ion-item class="class_button" (click)="itemTapped(orders,items)" no-padding detail-push no-lines>
+        <ion-row>
+          <b class="pad">Parvathi  </b>
+          <ion-icon id="icon_size" name="call"></ion-icon>{{orders.phone}}<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+          <span class="pad"> Estimated Delivery Time :<b> 02:18</b><span class="margin" padding-left>$163.50</span></span>
+        </ion-row>
+        <ion-row>
+          <ion-col class="pad">
+            <b>(Already Due)</b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <span class="pad"> Payment: <b>PAYPAL (PAID)</b></span></ion-col>
+        </ion-row>
+      </ion-item>
+    </div>
+  </ion-item-group>
+</ion-content>
+
+
+<ion-content *ngIf="items.subTitle == 'Rejected Orders List'">
+  <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+    <ion-label class="text-center" id="text-middle">{{items.badge}} {{items.subTitle}}</ion-label>
+  </ion-item>
+  <ion-item-group *ngFor="let orders of order" no-padding>
+    <ion-item-divider class="class_button-background"><b style="vertical-align:center!important;margin-bottom:40px">{{orders.dates}}</b></ion-item-divider>
+    <ion-item ion-item class="class_button" (click)="itemTapped(orders,items)" no-padding detail-push no-lines>
+      <ion-row>
+        <b class="pad">Parvathi  </b>
+        <ion-icon id="icon_size" name="call"></ion-icon>{{orders.phone}}<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+        <span class="pad"> Estimated Delivery Time : <b>02:18</b><span class="margin" padding-left>$163.50</span></span>
+      </ion-row>
+      <ion-row>
+        <ion-col class="pad">
+          <b>(Already Due)</b></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <span class="pad"> Payment: <b>PAYPAL (PAID)</b></span></ion-col>
+      </ion-row>
+
+    </ion-item>
+
+    <div *ngIf="orders.dates == '2015-3-21'">
+      <hr>
+      <ion-item ion-item class="class_button" (click)="itemTapped(orders,items)" no-padding detail-push no-lines>
+        <ion-row>
+          <b class="pad">Parvathi  </b>
+          <ion-icon id="icon_size" name="call"></ion-icon>{{orders.phone}}<span class="pad"> Delivery Option :<b> COLLECTION</b></span>
+          <span class="pad"> Estimated Delivery Time :<b> 02:18</b><span class="margin" padding-left>$163.50</span></span>
+        </ion-row>
+        <ion-row>
+          <ion-col class="pad">
+            <b>(Already Due)</b></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <span class="pad"> Payment: <b>PAYPAL (PAID)</b></span></ion-col>
+        </ion-row>
+      </ion-item>
+    </div>
+  </ion-item-group>
+</ion-content>

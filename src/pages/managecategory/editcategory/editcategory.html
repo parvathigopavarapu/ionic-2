@@ -1,0 +1,26 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="back-arrow"></ion-icon>
+    </button>
+        <ion-title style="background-color:white;color:#ff4400"><b style="color:#ff4400">{{name.day}}</b></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item class="label-neworders" style="background-color :#ff4400" no-padding>
+        <ion-label class="text-center" id="text-middle"><b>Edit Category</b></ion-label>
+    </ion-item>
+
+    <p class="padding-a">Category Name:</p>
+    <ion-input type="text" placeholder="Category Name" [(ngModel)]="item"></ion-input>
+    <p class="padding-a">Sequence:</p>
+    <ion-input type="text" placeholder="Sequence"></ion-input>
+    <p class="padding-a">Notes:</p>
+    <ion-textarea type="text" placeholder="Notes"></ion-textarea>
+    <ion-row padding class="margin">
+        <ion-col col-6>
+            <button ion-button class="button-class" (click)="gotopreviouspage()" class="width"><b>UPDATE CATEGORY</b></button></ion-col>
+        <ion-col col-6>
+            <button ion-button class="button-class" (click)="gotonextpage()" class="width"><b>CANCEL</b></button></ion-col>
+    </ion-row>
+</ion-content>

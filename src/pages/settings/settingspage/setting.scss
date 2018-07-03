@@ -1,0 +1,44 @@
+page-setting{
+    .logo1{
+        color: #ff4400;
+        
+    }
+    .icon1{
+        font-size:20px;
+    }
+    .toolbar-background-md{
+    background: white;
+    }
+.toolbar-background-ios{
+    background: white;
+    }
+     .toolbar-title-md{
+        color: #ff4400;
+    text-align: center;
+    }
+    .ion-label{
+        color: #ff4400;
+    }
+    ion-header ion-icon.back-button-icon.icon {
+    color: map-get($colors, info);
+}
+
+}
+
+.back-button.show-back-button {
+z-index: 9999;
+display: inline-block;
+}
+
+ion-title {
+   position: absolute;
+   top: 0;
+   left: 0;
+   padding: 0 90px 1px;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+}
+ .no-scroll .scroll-content{
+    overflow: hidden;
+  }

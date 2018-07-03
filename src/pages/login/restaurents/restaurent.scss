@@ -1,0 +1,70 @@
+page-restaurant{
+.rest{
+    text-align: center;
+    font-weight: bold;
+    color: #ff4400;
+    font-size: 20px;
+}
+
+.card1{
+    color:#ff4400;
+    font-size: 18px;
+    font-weight: bold;
+       padding-top:2%
+}
+.card2{
+    color:#ff4400;
+    font-size: 14px;
+    padding-top:10px;
+    margin-top:-6px;
+}
+.card{
+    border: 1px solid gray;
+     margin-top: 6%;
+     margin-bottom: -15px !important;
+     border-radius: 3px;
+     padding-top: 0px;
+}
+.header{
+   // border-bottom: 2px solid #ff4400;
+    padding-bottom: 2%;
+    padding-top:1%;
+}
+.button1{
+    background: none;
+}
+.toolbar-background-md{
+    background: white;
+    }
+.toolbar-background-ios{
+    background: white;
+    }
+
+    .toolbar-title-md{
+
+        color:#ff4400;
+        text-align: center;
+    }
+.toolbar-title-ios{
+        color: #ff4400;
+        text-align: center;
+    }
+    .icon{
+        color:#ff4400
+    }
+.scroll-content{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 40px !important
+}
+::-webkit-scrollbar {
+  border:none;
+  width:0;
+  background: none;
+}
+ .fixed-content{
+     
+margin-top: 40px;
+
+ }
+}

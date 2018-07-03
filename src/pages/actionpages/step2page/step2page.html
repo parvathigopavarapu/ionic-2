@@ -1,0 +1,60 @@
+<ion-header style="color:#ff4400">
+    <ion-navbar>
+        <ion-buttons end>
+        <button ion-button class="btn" (click) = 'close()'>
+       <ion-icon name = "close" class="icon3"></ion-icon></button>
+        </ion-buttons>
+        <div>
+            <ion-title class="color"><b>000245(NEW)</b></ion-title>
+        </div>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+ <div *ngIf="badge == 'Accept'">
+        <ion-item class="color6" no-lines no-padding>
+            <ion-label ><b>Accept Order</b></ion-label>
+        </ion-item>
+    </div>
+
+    <div *ngIf="badge == 'Reject'">
+        <ion-item class="label-neworders" style="background-color:#ff4400;" no-lines no-padding>
+            <ion-label class="text-center" id="text-middle"><b>Reject Order</b></ion-label>
+        </ion-item>
+    </div>
+
+     <div *ngIf="badge == 'Deliver'">
+        <ion-item class="label-neworders" style="background-color:#ff4400;" no-lines no-padding>
+            <ion-label class="text-center" id="text-middle"><b>Deliver Order</b></ion-label>
+        </ion-item>
+    </div>
+ <p class="color1"><b><u>Step 2 of 2</u></b></p>
+    <ion-item >
+        <ion-row>
+            <b class="color2">Parvathi Gopavarapu </b>
+            <ion-icon style="font-size:20px;padding-left:10px;padding-right:5px;color:#ff4400" name="call"></ion-icon><b class="color2">09542037170</b><span class="color2"> Delivery Option :<b> COLLECTION</b></span>
+            <span class="color2"> Expected Delivery Time :<b> 02:18</b><span class="margin">$163.50</span></span>
+        </ion-row>
+        <ion-row>
+            <ion-col class="color2">
+                <b>(Already Due)</b></ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <span class="color2"> Payment: <b>CASH (NOT PAID)</b></span></ion-col>
+        </ion-row>
+    </ion-item>
+
+    <div>
+<p class="color3" *ngIf ="badge == 'Accept'"><b>Acc. Delivery Time: 8:30pm (in 58 mins)</b></p>
+<p class="color3" *ngIf ="badge == 'Reject'"><b>Rejected Time: 8:30pm</b></p>
+<p class="color3" *ngIf ="badge == 'Deliver'"><b>Deliverd Time: 8:30pm(in 58 mins)</b></p>
+<p class="color3"><b>Notes: Thank you for your order</b></p>
+</div>
+<p class ="color4" *ngIf ="badge == 'Accept'"><b> The order has been updated to ACCEPTED successfully</b></p>
+<p class ="color4" *ngIf ="badge == 'Reject'"><b> The order has been updated to REJECTED successfully</b></p>
+<p class ="color4" *ngIf ="badge == 'Deliver'"><b> The order has been updated to Delivered successfully</b></p>
+<ion-row>
+            <ion-col>
+                <button ion-button  (click)='close()' class="btn6"><span >CLOSE</span></button></ion-col>
+        </ion-row>
+</ion-content>

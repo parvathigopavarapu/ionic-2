@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+        <!--<ion-buttons left (click)="goback()">
+        <button class="button-x" (click)="goback()">
+      <ion-icon class="icon-x" name="arrow-back"></ion-icon>
+    </button-->
+        <!--</ion-buttons>-->
+        <ion-title style="text-align:center;color:#ff4400;;"> Table Reservations</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div *ngIf = 'item.subTitle =="All Reservations"'>
+    <ion-item class="color-a">All Reservations</ion-item>
+    </div>
+    <div *ngIf = 'item.subTitle =="New Reservations List"'>
+    <ion-item class="color-a">New Reservations List</ion-item>
+    </div>
+    <div *ngIf = 'item.subTitle =="Confirmed Reservations List"'>
+    <ion-item class="color-a">Confirmed Reservations List</ion-item>
+    </div>
+    <div *ngIf = 'item.subTitle =="Completed Reservations List"'>
+    <ion-item class="color-a">Completed Reservations List</ion-item>
+    </div>
+     <div *ngIf = 'item.subTitle =="Rejected Reservations List"'>
+    <ion-item class="color-a">Rejected Reservations List</ion-item>
+    </div>
+    <ion-item-group *ngFor='let item of data' no-lines no-padding>
+       <ion-item-divider class="color-b">{{item.date}}</ion-item-divider>         
+        <ion-item no-lines no-padding detail-push (click) = "gotocollectionspage(item)">
+            <p class="padding-a">Name: <b>{{item.name}}</b></p>
+            <p class="padding-a">Phone: <b>{{item.phone}}</b></p>
+           <p class="padding-a">Email:<b> {{item.email}}</b></p>
+           <ion-icon name="contacts" style="margin-left:15%;color:#666666;font-size:20px" item-end>{{item.num}}</ion-icon>
+            <p class="padding-a" >Reserved Time: <b> {{item.time}}</b></p>
+        </ion-item>
+    </ion-item-group>
+</ion-content>

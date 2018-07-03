@@ -1,0 +1,106 @@
+page-create{
+    .header-x{
+         text-align: center;
+         color: white;
+         background: #ff4400;
+    }
+
+
+.padding-b{
+     margin-left:1%;
+  //  margin-right: 1%;
+    width:93%;
+}
+    .padding-a{
+    padding-bottom: 2%;
+   margin-top: 2%;
+    color:#666666;
+    font-size: 16px;
+     margin-left:2%;
+    margin-right:7%;
+    font-weight: bold;
+    margin-bottom: 0%;
+}
+  .padding-x{
+    padding-bottom: 0;
+    // padding-left:5%;
+    color:white;
+    font-size: 16px;
+     margin-left:7%;
+   margin-right:14%;
+    font-weight: bold;
+    margin-bottom:1%;
+    width:86%;
+    margin-top:8px;
+}
+ .padding-y{
+    padding-bottom: 0;
+    // padding-left:5%;
+    color:gray;
+    font-size: 16px;
+     margin-left:11%;
+  //  margin-right:25%;
+    padding-left:6px;
+  
+    border:1px solid #ff4400;
+    height: 70%;
+    border-radius: 4px;
+    padding-top:-10px;
+   // margin-bottom:15px;
+}
+ .padding-z{
+    padding-bottom: 0;
+    // padding-left:5%;
+    color:gray;
+    font-size: 16px;
+     margin-left:3%;
+   // margin-right:-2px;
+    padding-left:6px;
+
+    border:1px solid #ff4400;
+    height: 70%;
+    border-radius: 4px;
+    padding-top:-10px;
+   // margin-bottom:15px;
+}
+.button-a{
+    background: none;
+    background-color: none;
+    box-shadow: none;
+}
+.icon{
+    font-size: 35px;
+    font-weight:bold;
+    color:#ff4400;
+}
+.input{
+    height:40px;
+    padding-top:0px;
+ 
+}
+.scroll-content{
+    overflow: hidden;
+}
+.toolbar-title{
+    display: block;
+     overflow: visible; 
+    width: 100%;
+    text-overflow: none;
+    white-space: nowrap;
+}
+
+.textarea{
+    height: 100%;
+}
+.text-input-md {
+    margin-top:10px;
+}
+.text-input-ios {
+    margin-top:10px;
+}
+.text-input::-webkit-input-placeholder {
+  color: #FF4F00;
+  font-size: 15px;
+    vertical-align: middle;
+}
+}

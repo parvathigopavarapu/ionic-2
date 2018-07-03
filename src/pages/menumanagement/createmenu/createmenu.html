@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title style="text-align:center;color:#ff4400;"><b>Restaurant Menu</b></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+<ion-list>
+    <ion-item *ngIf = "edit != 'edit'" class="item-a" no-padding no-lines><b>Create Menu </b></ion-item>
+     <ion-item *ngIf = "edit == 'edit'" class="item-a" no-padding no-lines><b>Edit Menu </b></ion-item>
+<ion-label class="margin">Title:</ion-label>
+<ion-input type="text"></ion-input>
+
+<ion-label class="margin">Status:</ion-label>
+<ion-select interface="action-sheet">
+    <ion-option>Enable</ion-option>
+    <ion-option>Disable</ion-option>
+</ion-select>
+
+<ion-label class="margin">Description:</ion-label>
+<textarea ></textarea>
+
+<ion-label class="margin">Notes:</ion-label> 
+<textarea ></textarea>
+
+<ion-label class="margin">Disclaimer:</ion-label>
+<textarea >Food substitute may be used in place of some ingredients </textarea>
+
+</ion-list>
+
+<ion-row>
+    <ion-col *ngIf = "edit != 'edit'"><button ion-button (click) = "restaurantlist()" >SAVE MENU </button></ion-col>
+    <ion-col *ngIf = "edit == 'edit'"><button ion-button (click) = "restaurantlist()" >UPDATE MENU </button></ion-col>
+     <ion-col><button ion-button (click) = "cancelpage()"> CANCEL </button></ion-col>
+</ion-row>
+</ion-content>

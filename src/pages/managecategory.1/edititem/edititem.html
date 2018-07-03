@@ -1,0 +1,369 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{name1.day}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item style="text-align:center;color:white;background:#ff4400;font-weight:bold;font-size:18px">Edit Item</ion-item>
+    <div *ngIf="tab !='tab'">
+        <ion-segment [(ngModel)]="basic">
+            <ion-segment-button value="basic">Basic</ion-segment-button>
+            <ion-segment-button value="varities1">Varities</ion-segment-button>
+            <ion-segment-button value="Dietary1">Dietary</ion-segment-button>
+        </ion-segment>
+    </div>
+    <div *ngIf="tab =='tab'">
+        <ion-segment [(ngModel)]="varities1">
+            <ion-segment-button value="basic">Basic</ion-segment-button>
+            <ion-segment-button value="varities1">Varities</ion-segment-button>
+            <ion-segment-button value="Dietary1">Dietary</ion-segment-button>
+        </ion-segment>
+    </div>
+    <div [ngSwitch]="basic">
+        <div *ngSwitchCase="'basic'">
+            <p class="padding-t">SKU(Stock Keeping Unit):</p>
+            <ion-input type="text" placeholder="SKU"></ion-input>
+            <p class="padding-t">Sequence:</p>
+            <ion-input type="text" placeholder="Sequence"></ion-input>
+            <p class="padding-t">Item Name:</p>
+            <ion-input type="text" [(ngModel)]="name2" placeholder="item Name"></ion-input>
+            <p class="padding-t">Category Name:</p>
+            <ion-input type="text" [(ngModel)]="name" placeholder="Category Name" readonly></ion-input>
+            <ion-row style="margin-left:12px;text-align:center">
+                <ion-col col-3>
+                    <p class="padding-t">Popular:</p>
+                </ion-col>
+                <ion-col col-3 style="font-size:16px;color:green">
+                    <ion-item no-lines>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+            <p class="padding-t">Notes:</p>
+            <textarea style="width:86%;margin-left:7%;margin-right:7%;height:60px;border:1.2px solid #ff4400;border-radius:5px" placeholder="Notes"></textarea>
+            <ion-row style="margin-left:12px;text-align:center">
+                <ion-col col-3>
+                    <p class="padding-t">Status:</p>
+                </ion-col>
+                <ion-col col-3 style="font-size:16px;color:green">
+                    <ion-item no-lines>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-fab right bottom style="position:fixed;margin-bottom:50px">
+                <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+                                <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+               </button>
+                <ion-fab-list side="top">
+                    <button ion-fab class="fabStartBtn" (click)="gotolist()"><b>Save</b></button>
+                    <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Cancel</b></button>
+                </ion-fab-list>
+            </ion-fab>
+        </div>
+         <div *ngSwitchCase="'varities1'">
+            <div *ngFor="let apm of menu; ">
+                <div *ngIf="apm.name == name ">
+                    <div *ngFor="let it of apm.items">
+                        <ion-list border-bottom="none" *ngIf="it.name == name2 ">
+                            <ion-item-sliding *ngFor="let varity of it.varities;let index=index;">
+                                <ion-item text-wrap style="margin-top:0px;margin-bottom:0px;">
+                                    <ion-item no-lines>
+                                        <ion-row  *ngIf = "edit1 == false">
+                                            <ion-col col-2>
+                                                <ion-item >
+                                                    <p style="color:#ff4400;;font-weight:bold;font-size:15px;text-align:right">{{index+1}}. </p>
+                                                </ion-item>
+                                            </ion-col>
+
+                                            <ion-col col-4>
+                                                <ion-item  no-padding>
+                                                    <p style="color:#ff4400;font-weight:bold;font-size:15px;border:0px">{{varity.name}}</p>
+
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col col-4>
+                                                <ion-item >
+                                                    <p style="font-size:12px;padding-top:5px">£{{varity.price | number : '1.2'}}</p>
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col style="margin-top:15px">
+                                                <ion-icon name="arrow-down" *ngIf="varity.edit != true" style="color:#ff4400;font-size:15px;" (click)="editfields($event,varity,edit)"></ion-icon>
+                                                 <ion-icon name="arrow-up"  style="color:#ff4400;font-size:15px" (click)="editfields1($event,varity,edit1)"></ion-icon>
+                                            </ion-col>
+                                        </ion-row>
+
+                                         <ion-row *ngIf = "edit != false">
+                                            <ion-col col-2>
+                                                <ion-item >
+                                                    <p style="color:#ff4400;;font-weight:bold;font-size:15px;text-align:right">{{index+1}}. </p>
+                                                </ion-item>
+                                            </ion-col>
+
+                                            <ion-col col-4>
+                                                <ion-item  no-padding>
+                                                    <p style="color:#ff4400;font-weight:bold;font-size:15px;border:0px" >{{varity.name}}</p>
+
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col col-4>
+                                                <ion-item >
+                                                    <p style="font-size:12px;padding-top:5px">£{{varity.price | number : '1.2'}}</p>
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col style="margin-top:15px">
+                                                <ion-icon name="arrow-down" *ngIf="varity.edit != true" style="color:#ff4400" (click)="editfields($event,varity,edit)"></ion-icon>
+                                                 <ion-icon name="arrow-up" *ngIf="varity.edit == true" style="color:#ff4400" (click)="editfields1($event,varity,edit1)"></ion-icon>
+                                            </ion-col>
+                                        </ion-row>
+                                          <div style="background-color:antiquewhite;" *ngIf="varity.edit == true">
+                                                    <ion-item  style="border-bottom:none;background-color:antiquewhite" no-padding no-lines>
+                                                        <ion-label style="padding-left:15px;color:black">Varity Name:</ion-label>
+                                                        <ion-input type="text" class="input-m" [(ngModel)]="varity.name"  no-border></ion-input>
+                                                    </ion-item>
+                                                      <ion-item  style="margin-top:10px;border-bottom:none;background-color:antiquewhite" no-padding no-lines>
+                                                              <ion-label style="padding-left:15px;color:black">Price:</ion-label>
+                                                         <ion-input type="text" class="input-m"  [(ngModel)]="varity.price" style="margin-left:19%"
+                                                            no-border></ion-input>
+                                                    </ion-item>
+                                                  <ion-item  style="margin-top:10px;border-bottom:none;background-color:antiquewhite" no-padding no-lines>
+                                                          <ion-label style="padding-left:15px;color:black">Serve:</ion-label>
+                                                        <ion-input type="text" class="input-m" style="margin-left:18%" [(ngModel)]="varity.serve" placeholder = "serve"  no-border></ion-input>
+                                                    </ion-item>
+                                                     <ion-item  style="margin-top:10px;border-bottom:none;background-color:antiquewhite" no-padding no-lines>
+                                                             <ion-label style="padding-left:15px;color:black">Extras:</ion-label>
+                                                        <ion-input type="text" class="input-m" style="margin-left:17%" [(ngModel)]="varity.extras" placeholder = "extraItem"  no-border></ion-input>
+                                                    </ion-item>
+                                                </div>
+                                    </ion-item>
+                                </ion-item>
+                                <ion-item-options>
+                                    <button ion-button (click)="editpopup(varity)" class="rowz" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" style="font-size:25px;color:#ff4400" ></ion-icon>
+                                             EDIT 
+                                </button>
+                                    <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px;color:#ff4400" ></ion-icon>
+                                          DELETE
+                                </button>
+                                </ion-item-options>
+
+                            </ion-item-sliding>
+
+                        </ion-list>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--div *ngSwitchCase="'varities1'">
+            <div *ngIf="edit != true">
+            <div *ngFor="let apm of menu; ">
+                <div *ngIf="apm.name == name ">
+                    <div *ngFor="let it of apm.items">
+                        <ion-list border-bottom="none" *ngIf="it.name == name2">
+                            <ion-item-sliding *ngFor="let varity of it.varities;let index=index;">
+                                <ion-item text-wrap style="margin-top:0px;margin-bottom:0px;height:60px">
+                                    <ion-item no-lines>
+                                        <ion-row>
+                                            <ion-col col-2 *ngIf="varity.edit != true">
+                                                <ion-item no-lines no-border>
+                                                    <p style="color:#ff4400;;font-weight:bold;font-size:15px;text-align:right">{{index+1}}. </p>
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col col-2 *ngIf="varity.edit == true">
+                                                <ion-item no-lines no-border>
+                                                    <p style="color:#ff4400;;font-weight:bold;font-size:15px;text-align:right">{{index+1}}. </p>
+                                                </ion-item>
+                                            </ion-col>
+
+                                            <ion-col col-6 *ngIf="varity.edit != true">
+                                                <ion-item no-lines no-border no-padding>
+                                                    <p style="color:#ff4400;font-weight:bold;font-size:15px;border:0px" (click)="editfields($event,varity,edit)">{{varity.name}}</p>
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col col-6 *ngIf="varity.edit == true" style="margin-left:-19px">                                                                                
+                                                <ion-item no-lines no-border style="margin-top:10px;margin-left:0px" no-padding>
+                                                    <ion-input type="text" style="color:#ff4400;font-weight:bold;font-size:15px;text-align:right;padding:4px;" (click)="savefields($event, varity,edit)"
+                                                        [(ngModel)]="varity.name" style="margin-top:-12px;height:30px;" no-border></ion-input>
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col col-4 *ngIf="varity.edit1 != true">
+                                                <ion-item no-lines no-border>
+                                                    <p style="font-size:12px;padding-top:5px" (click)="editfields1($event,varity,edit1)">£{{varity.price | number : '1.2'}}</p>
+                                                </ion-item>
+                                            </ion-col>
+                                            <ion-col col-4 *ngIf="varity.edit1 == true" style="margin-left:0px">
+                                                <ion-item no-lines style="margin-top:10px;margin-bottom:0px;" no-border>
+                                                    <ion-input type="text" style="color:#ff4400;margin-top:-50px;font-weight:bold;font-size:15px" *ngIf="varity.edit1 == true"
+                                                        (click)="savefields1($event,varity,edit1)" [(ngModel)]="varity.price"
+                                                        style="margin-top:-12px;height:30px" no-border></ion-input>
+
+                                                </ion-item>
+                                            </ion-col>
+
+                                        </ion-row>
+                                    </ion-item>
+                                </ion-item>
+                                <ion-item-options>
+                                    <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px;color:#ff4400" ></ion-icon>
+                                          DELETE
+                                </button>
+                                </ion-item-options>
+                            </ion-item-sliding>
+
+                        </ion-list>
+                    </div>
+                </div>
+            </div>
+            <div *ngIf="variety1.Variety_Name != null">
+                <ion-list>
+                    <ion-item-sliding>
+                        <ion-item text-wrap style="margin-top:0px;margin-bottom:0px;height:60px">
+
+                            <ion-row>
+                                <ion-col col-2>
+                                    <ion-item>
+                                        <p style="color:#ff4400;;font-weight:bold;font-size:15px;text-align:right">{{variety1.serve}}. </p>
+                                    </ion-item>
+                                </ion-col>
+                                <ion-col col-6>
+                                    <ion-item>
+                                        <p style="color:#ff4400;font-weight:bold;font-size:15px;border:0px" (click)="editfields($event,varity,edit)">{{variety1.Variety_Name}}</p>
+                                    </ion-item>
+                                </ion-col>
+                                <ion-col col-4>
+                                    <ion-item>
+                                        <p style="font-size:12px;padding-top:5px" (click)="editfields1($event,varity,edit1)">£{{variety1.price | number : '1.2'}}</p>
+                                    </ion-item>
+                                </ion-col>
+                            </ion-row>
+                        </ion-item>
+                        <ion-item-options>
+                            <button ion-button (click)="editfields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px;color:#ff4400" ></ion-icon>
+                                          EDIT
+                                </button>
+                            <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px;color:#ff4400" ></ion-icon>
+                                          DELETE
+                                </button>
+                        </ion-item-options>
+                    </ion-item-sliding>
+                </ion-list>
+            </div>
+            <!--ion-row>
+                <ion-col col-2>
+                    <ion-item no-lines no-border>
+                        <p style="color:#ff4400;;font-weight:bold;font-size:15px;text-align:right">{{data.Serve}}. </p>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-6>
+                    <ion-item no-lines no-border no-padding>
+                        <p style="color:#ff4400;font-weight:bold;font-size:15px;border:0px" (click)="editfields($event,varity,edit)">{{varity.name}}</p>
+                    </ion-item>
+                </ion-col>
+                <ion-col col-4 >
+                    <ion-item no-lines no-border>
+                        <p style="font-size:12px;padding-top:5px" (click)="editfields1($event,varity,edit1)">£{{variety.price | number : '1.2'}}</p>
+                    </ion-item>
+                </ion-col>
+            </ion-->
+
+            <!--ion-footer style="position:fixed;margin-bottom:33px;margin-right:0px;" no-border>
+                    <button ion-button (click)="createItem(edit=true)" style="margin-top:0px;background:none;background-color:none;box-shadow:none;width:100px;height:100px">   
+                   <ion-icon name="add-circle" style="color:#ff4400;font-size:70px"></ion-icon>
+                      </button>
+                </ion-footer>
+                <ion-fab right bottom style="position:fixed;margin-bottom:50px">
+                    <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+                                <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+                  </button>
+                    <ion-fab-list side="top">
+                        <button ion-fab class="fabStartBtn" (click)="gotolist()"><b>Save</b></button>
+                        <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Cancel</b></button>
+                    </ion-fab-list>
+                </ion-fab-->
+            <!--</div>-->
+            <!--div *ngIf="edit == true">
+                <p class="padding-t">Variety Name:</p>
+                <ion-input type="text" placeholder="Name"></ion-input>
+                <p class="padding-t">Price:</p>
+                <ion-input type="number" placeholder="Price"></ion-input>
+                <p class="padding-t">Serve:</p>
+                <ion-input type="text" placeholder="Serve"></ion-input>
+
+
+                <ion-fab right bottom style="position:fixed;margin-bottom:50px">
+                    <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+                                <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+               </button>
+                    <ion-fab-list side="top">
+                        <button ion-fab class="fabStartBtn" (click)="saveItem(edit=false)"><b>Save</b></button>
+                        <button ion-fab class="fabStartBtn" (click)="saveItem(edit=false)"><b>Cancel</b></button>
+                    </ion-fab-list>
+                </ion-fab>
+            </div>
+
+        </div-->
+        <div *ngSwitchCase="'Dietary1'">
+            <!--<ion-item style="color:#ff4400;font-size:18px;text-align:center;border-bottom:3px solid gray" >List Of Dietary Items</ion-item>-->
+            <ion-list>
+                <ion-item-group>
+                    <ion-item class="item-a">
+                        <ion-label>Vegetarian</ion-label>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+                    <ion-item class="item-a">
+                        <ion-label>Non-Vegetarian</ion-label>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+                    <ion-item class="item-a">
+                        <ion-label>Too Spicy</ion-label>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+                    <ion-item class="item-a">
+                        <ion-label>Medium Spicy</ion-label>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+                    <ion-item class="item-a">
+                        <ion-label>Fruit Bowls</ion-label>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+
+                </ion-item-group>
+            </ion-list>
+            <div *ngIf="variety2.dietary_Name != null">
+            <ion-item class="item-a" >
+                <ion-label>{{variety2.dietary_Name}}</ion-label>
+                <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+            </ion-item>
+            </div>
+            <!--ion-footer style="position:fixed;margin-bottom:33px;margin-right:0px;" no-border>
+                <button ion-button (click)="createItem(edit=true)" style="margin-top:0px;background:none;background-color:none;box-shadow:none;width:100px;height:100px">   
+                   <ion-icon name="add-circle" style="color:#ff4400;font-size:70px"></ion-icon>
+                      </button>
+            </ion-footer>
+            <ion-fab right bottom style="position:fixed;margin-bottom:50px">
+                <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+                                <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+               </button>
+                <ion-fab-list side="top">
+                    <button ion-fab class="fabStartBtn" (click)="gotolist()"><b>Save</b></button>
+                    <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Cancel</b></button>
+                </ion-fab-list>
+            </ion-fab-->
+        </div>
+    </div>
+
+    <ion-fab right bottom style="position:fixed;margin-bottom:50px">
+        <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+               <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+        </button>
+        <ion-fab-list side="top" style="font-size:70px;">
+            <div>
+                <button ion-fab class="fabStartBtn" (click)="gotolist(itemname)"><b>Save</b></button>
+                <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Cancel</b></button>
+                <button ion-fab class="fabStartBtn" (click)="addvariety(variety1)"><b style="font-size:10px">Add Variety</b></button>
+                <button ion-fab class="fabStartBtn" (click)="adddietary(variety2)"><b style="font-size:10px">Add Dietary</b></button>
+            </div>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>

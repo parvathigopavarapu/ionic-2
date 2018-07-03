@@ -1,0 +1,85 @@
+page-openinghours{
+    .even{
+        background: whitesmoke;
+        color:#ff4400;;
+    }
+    .odd{
+        background:white;
+        color:#ff4400;;
+    }
+    .toolbar-background-ios{
+    background: white;
+    }
+      .toolbar-background-md{
+    background: white;
+    }
+    .toolbar-title-ios{
+        color: #ff4400;;
+        //text-align: center;
+        text-align: center;
+    }
+       .toolbar-title-md{
+        color: #ff4400;;
+  // margin-right:2.5cm; 
+  text-align: center;
+    }
+    .ion-list {
+   border-top: none;
+   border-bottom: none;
+}
+ion-header ion-icon.back-button-icon.icon {
+    color: map-get($colors, info);
+}
+
+.item1{
+background:#ff4400;;
+color:white;
+text-align:center;
+width:100%;
+//padding-left: 0px;
+}
+#color1{
+    color:#ff4400;
+   // background-color: #ff4400;
+   border: 1.2px solid #ff4400;
+width:70%;
+}
+.icon-cls{
+    color:#ff4400;
+}
+.button-1{
+    background: none;
+    background-color: none;
+    box-shadow: none;
+    border: none;
+}
+.icon-1{
+    color: #ff4400;
+    font-size: 30px;
+    font-weight: bold;
+}
+.width{
+    width: 30%;
+    text-align: center;
+}
+.row{
+    text-align: center;
+    padding-bottom: 3%;
+    padding-top: 3%;
+    padding-left: 0px;
+}
+.item-ios{
+
+     padding-left: 0px;
+}
+ion-item-sliding.active-slide.active-options-right ion-item-options:not([side=left]) {
+     width: 20%; 
+}
+.input-x{
+    border:none !important;
+    max-width: 500px;
+}
+
+}
+
+

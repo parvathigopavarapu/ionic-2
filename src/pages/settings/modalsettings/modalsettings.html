@@ -1,0 +1,23 @@
+
+<ion-header >
+  <ion-navbar>
+    <ion-title  >Address</ion-title>
+     <ion-buttons start>
+      <button ion-button style="color:white" (click)="close()">
+       Cancel </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="no-scroll">
+
+  <ion-list>
+    <a *ngFor= 'let item of add'(click) ='openModal(item)'>
+      <!--ion-item  (click)="openModal(item)" style="color:maroon"-->
+         <ion-item  style="color:#ff4400;">
+      {{item.name}}
+      </ion-item>
+    </a>
+  </ion-list>
+
+</ion-content>

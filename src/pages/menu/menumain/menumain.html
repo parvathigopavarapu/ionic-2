@@ -1,0 +1,60 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="back-arrow"></ion-icon>
+    </button>
+        <ion-title style="background-color:white;color:#ff4400"><b style="color:#ff4400">List Of Items</b></ion-title> 
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-row>
+        <ion-col col-10>
+            <!--<ion-searchbar [(ngModel)]="searchTerm" (ionInput)="getItems($event)" style="background:#ff4400;" placeholder="Search Item"></ion-searchbar>-->
+        <ion-searchbar placeholder="Search Item" (ionInput)="getItems($event)" [(ngModel)]="searchTerm" style="padding:0px;height:40px;margin-top:7px;margin-left:5px"></ion-searchbar>
+        </ion-col>
+        <ion-col>
+            <div class="newcol">
+                <ion-icon name="md-cart" class="icon1"></ion-icon>
+                <ion-badge class="badge1">12</ion-badge>
+            </div>
+        </ion-col>
+    </ion-row>
+    <ion-card *ngFor="let category of menu" (click)="toggleDetails(category)" data-toggle="collapse" style="margin-top:5px">
+        <ion-row class="header1" id="{{ category.name }}">
+            <ion-col col-10> <b style="font-size:17px">{{ category.name }} </b>[{{ category.items[0].sequence }}-{{ category.items[category.items.length-1].sequence
+                }}]
+                <ion-badge class="badge2">{{category.items.length}}</ion-badge>
+            </ion-col>
+            <ion-col>
+                <ion-icon class="icon2" name="ios-arrow-down" style="float:right"></ion-icon>
+            </ion-col>
+        </ion-row>
+        <div *ngIf="category.showDetails" no-padding style="border: none" class="panel-collapse collapse">
+            <p style="padding-left:15px;padding-top:10px;" text-wrap>{{category.items[0].category.notes}}</p>
+           
+            <ion-item *ngFor="let it of category.items" text-wrap>
+                <ion-row>
+                    <ion-col col-6 nopadding>
+                        <ion-row>
+                            <ion-col col-4>
+                                <p style="color:#ff4400;;font-weight:bold;font-size:15px;text-align:right">{{it.sequence | json}}. </p>
+                            </ion-col>
+                            <ion-col col-8>
+                                <p style="color:#ff4400;;font-weight:bold;font-size:15px">{{it.name}}</p>
+                                <p style="font-size:12px;padding-top:5px">{{it.notes }}</p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-col>
+                    <ion-col col-6>
+                        <ion-row *ngFor="let varity of it.varities">
+                            <ion-col col-1 style="font-size:15px">»</ion-col>
+                            <ion-col col-5 style="font-size:15px">{{varity.name}}</ion-col>
+                            <ion-col col-5 style="text-align:right;font-size:15px">£{{varity.price | number : '1.2'}}</ion-col>
+                          
+                        </ion-row>
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+        </div>
+    </ion-card>
+</ion-content>

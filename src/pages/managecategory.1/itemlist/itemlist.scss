@@ -1,0 +1,51 @@
+
+page-itemlist{
+.even{
+        background: whitesmoke;
+        color:#ff4400;
+        height:25%;
+    }
+    .odd{
+        background:white;
+        color:#ff4400;;
+        height:25%;
+    }
+    .rowz{
+   text-align: center;
+   vertical-align: middle;
+   color:#ff4400;
+   width:15%;
+   border:1px solid #ff4400;
+   margin-top:1px;
+   text-align: center;
+  padding-left:0.5cm;
+  padding-right:0.5cm;
+  font-size:14px;
+}
+.rowy{
+ color:#ff4400;
+ width:15%;
+ border:1px solid #ff4400;
+ margin-top:1px;
+ text-align: center;
+ vertical-align: middle;
+ justify-content: center;
+font-size:14px;
+}
+.row{
+margin-top:1px;
+margin-bottom: -5px;
+padding-bottom: 4%;
+height:25%;
+}
+.scroll-content{
+    overflow-y: scroll;
+}
+.toolbar-title{
+    overflow: visible;
+}
+.badge2{
+    color:white;
+    background-color: gray;
+}
+}

@@ -1,0 +1,30 @@
+<ion-header>
+    <ion-navbar>
+    <ion-title>
+        <b>000254(NEW)</b></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <div>
+        <ion-item id="color">All Reservations</ion-item>
+    </div>
+      <ion-item-group  no-lines no-padding>
+       <ion-item-divider class="color-b">{{item.date}}</ion-item-divider>         
+        <ion-item lines no-padding (click) = "gotocollectionspage()">
+            <p class="padding-a" id="color">Name: <b>{{item.name}}</b></p>
+            <p class="padding-a" id="color">Phone: <b>{{item.phone}}</b></p>
+           <p class="padding-a" id="color">Email:<b> {{item.email}}</b></p>
+           <ion-icon name="contacts" style="margin-left:15%;color:#666666;font-size:20px" item-end>{{item.num}}</ion-icon>
+           <p class="padding-a" id="color">Reserved Time: <b> {{item.time}}</b></p>
+        </ion-item>
+        <ion-item id="color">Table Details</ion-item>
+    </ion-item-group>
+      <div>
+    <ion-row class="padding-btn">
+      <ion-col col-6>
+        <button ion-button (click)="acceptOrder(item)" style="width:100%;margin-bottom:25%">Accept</button></ion-col>
+      <ion-col col-6>
+        <button ion-button (click)="rejectOrder(item)" style="width:100%;margin-bottom:25%">Reject</button></ion-col>
+    </ion-row>
+  </div>
+</ion-content>

@@ -1,0 +1,73 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title>Table Reservation</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item class="label-neworders" style="background-color:#ff4400;" no-padding>
+        <ion-label class="text-center" id="text-middle"><b>New Reservation</b></ion-label>
+    </ion-item>
+    <div padding-top><b class="pading">No.of Seats</b></div>
+    <div >
+        <ion-row no-padding>
+            <ion-col col-12>
+                <ion-select [(ngModel)]="code" class="select1" placeholder="Select">
+                    <ion-option>4</ion-option>
+                    <ion-option>6</ion-option>
+                </ion-select>
+            </ion-col>
+        </ion-row>
+    </div>
+    <ion-row padding-left id="height">
+        <ion-col col-6>
+            <div ><b class="pading">Date:</b></div>
+        </ion-col>
+        <ion-col col-6>
+            <div><b class="pading">Time:</b></div>
+        </ion-col>
+    </ion-row>
+    <ion-row >
+        <ion-col col-6>
+            <!--ion-select [(ngModel)]="code" class="select11" placeholder="Select"-->
+               <!--<ion-input type="date" class="select11"></ion-input> -->
+               <ion-datetime pickerFormat="MMM DD YYYY" class="date-a" id = "padding" [(ngModel)]="event.month"></ion-datetime> 
+           
+        </ion-col>
+        <ion-col col-6>
+           <!--<ion-input type="time" class="select11"></ion-input>-->
+             <ion-datetime pickerFormat="hh:mm A" class="date-a" [(ngModel)]="event.month"></ion-datetime>  
+        </ion-col>
+    </ion-row>
+    <div><b class="pading">Name:</b></div>
+    <ion-row>
+        <ion-col>
+            <ion-input type="text" class="select1"></ion-input>
+        </ion-col>
+    </ion-row>
+    <div><b class="pading">Phone:</b></div>
+    <ion-row>
+        <ion-col>
+            <ion-input type="number" class="select1"></ion-input>
+        </ion-col>
+    </ion-row>
+    <div><b class="pading">Email:</b></div>
+    <ion-row>
+        <ion-col>
+            <ion-input type="email" class="select1"></ion-input>
+        </ion-col>
+    </ion-row>
+    <div><b class="pading">Special Notes:</b></div>
+    <div>
+        <textarea class="textarea" placeholder="Notes"></textarea>
+    </div>
+    <ion-item no-lines>
+        <ion-row class="row-a">
+            <ion-col>
+                <button ion-button class="btx-z" (click)="homepage()"><b>CONFIRM</b></button>
+            </ion-col>
+        </ion-row>
+    </ion-item>
+</ion-content>

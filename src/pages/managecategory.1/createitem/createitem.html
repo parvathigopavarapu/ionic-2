@@ -1,0 +1,100 @@
+<ion-header>
+
+    <ion-navbar>
+        <ion-title>{{name1.day}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item style="text-align:center;color:white;background:#ff4400;font-weight:bold;font-size:18px">Create Item</ion-item>
+    <ion-segment [(ngModel)]="basic">
+        <ion-segment-button value="basic">Basic</ion-segment-button>
+        <ion-segment-button value="varities1">Varities</ion-segment-button>
+        <ion-segment-button value="Dietary1">Dietary</ion-segment-button>
+    </ion-segment>
+
+    <div [ngSwitch]="basic">
+        <div *ngSwitchCase="'basic'">
+
+            <p class="padding-t">SKU(Stock Keeping Unit):</p>
+            <ion-input type="text" placeholder="SKU"></ion-input>
+            <p class="padding-t">Sequence:</p>
+            <ion-input type="text" placeholder="Sequence"></ion-input>
+            <p class="padding-t">Item Name:</p>
+            <ion-input type="text" placeholder="item Name" [(ngModel)]="itemname"></ion-input>
+            <div *ngIf="failure == true" style="font-size:14px;color:#ff4400;margin-left:9%">*please fill item name</div>
+            <ion-row style="margin-top:10px;margin-left:12px;text-align:center">
+                <ion-col col-3>
+                    <p class="padding-t">Popular:</p>
+                </ion-col>
+                <ion-col col-3 style="font-size:16px;color:green;margin-top:-5px;">
+                    <ion-item no-lines>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+            <p class="padding-t">Notes:</p>
+            <textarea style="width:86%;margin-left:7%;margin-right:7%;height:60px;border:1.2px solid #ff4400;border-radius:5px" placeholder="Notes"></textarea>
+            <ion-row style="margin-top:10px;margin-left:12px;text-align:center">
+                <ion-col col-3>
+                    <p class="padding-t">Status:</p>
+                </ion-col>
+                <ion-col col-3 style="font-size:16px;color:green;margin-top:-5px;">
+                    <ion-item no-lines>
+                        <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+
+        </div>
+        <div *ngSwitchCase="'varities1'">
+            <p class="padding-t">Variety Name:</p>
+            <ion-input type="text" placeholder="Name"></ion-input>
+            <p class="padding-t">Price:</p>
+            <ion-input type="number" placeholder="Price"></ion-input>
+            <p class="padding-t">Serve:</p>
+            <ion-input type="text" placeholder="Serve"></ion-input>
+
+        </div>
+        <div *ngSwitchCase="'Dietary1'">
+            <p class="padding-t">Dietary Name:</p>
+            <ion-input type="text" placeholder="Name"></ion-input>
+            <ion-row style="margin-left:12px;text-align:center">
+                <ion-col col-3>
+                    <p class="padding-t">Status:</p>
+                </ion-col>
+                <ion-col col-3 style="font-size:16px;color:green">
+                    <ion-item no-lines>
+                        <ion-toggle color="secondary" checked="false"></ion-toggle>
+                    </ion-item>
+                </ion-col>
+            </ion-row>
+        </div>
+    </div>
+    <ion-fab right bottom style="position:fixed;margin-bottom:50px" *ngIf="failure == false">
+        <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+               <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+        </button>
+        <ion-fab-list side="top" style="font-size:60px;">
+
+            <div>
+                <button ion-fab class="fabStartBtn" (click)="gotolist(itemname)"><b>Save</b></button>
+                <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Cancel</b></button>
+                <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Add Variety</b></button>
+                 <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Add Dietary</b></button>
+            </div>
+        </ion-fab-list>
+    </ion-fab>
+    <ion-fab right bottom style="position:fixed;margin-bottom:50px" *ngIf="failure == true">
+        <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+               <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+        </button>
+        <ion-fab-list side="top" style="font-size:60px;">
+            <div>
+                <button ion-fab class="fabStartBtn" (click)="gotolist(itemname)"><b>Save</b></button>
+                <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Cancel</b></button>
+                  <button ion-fab class="fabStartBtn" (click)="stayhere()"><b style="color:#ff4400;font-size:10px">Add Variety</b></button>
+                 <button ion-fab class="fabStartBtn" (click)="stayhere()"><b style="color:#ff4400;font-size:10px">Add Dietary</b></button>
+            </div>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>

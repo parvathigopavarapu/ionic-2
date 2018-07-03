@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="back-arrow"></ion-icon>
+    </button>
+        <ion-title style="background-color:white;color:#ff4400"><b style="color:#ff4400">{{name.day}}</b></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item  style="background-color :#ff4400;text-align:center;color:white;font-weight:bold" no-padding>
+        <ion-label  ><b>Category List</b></ion-label>
+    </ion-item>
+    <ion-list border-bottom="none">
+        <ion-item-sliding *ngFor="let category of menu;let index=index; let odd=odd; let even=even;">
+            <ion-item [ngClass]="{ odd: odd, even: even }" text-wrap no-lines  >
+                <ion-row class="row">
+                    <ion-col col-1>{{index+1}} </ion-col>
+                      <ion-col col-10>{{ category.name }}</ion-col>
+                       
+                </ion-row>
+                <ion-row no-padding>
+                    <ion-col col-1></ion-col>
+                   <ion-col><p>{{category.items[0].category.notes}}</p></ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button (click)="editfields(category.name,index)" class="rowz" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" style="font-size:25px" ></ion-icon>
+                 EDIT 
+                </button>
+                <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px" ></ion-icon>
+                 DELETE
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-footer style="position:fixed;margin-bottom:50px;" no-border>
+    <button ion-button (click)="createCategory()" style="margin-top:0px;float:right;background:none;background-color:none;box-shadow:none;width:100px;height:100px">   
+           <ion-icon name="add-circle" style="color:#ff4400;font-size:70px"></ion-icon>
+    </button>
+    </ion-footer>
+</ion-content>

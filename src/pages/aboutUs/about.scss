@@ -1,0 +1,28 @@
+page-about{
+.toolbar-background-md{
+        background: white; 
+    }
+
+    .toolbar-background-ios{
+        background: white;
+        
+    }
+
+    .toolbar-title-ios{
+        color: #ff4400;
+        text-align: center;
+    }
+       .toolbar-title-md{
+        color: #ff4400;
+ text-align: center;
+    }
+    ion-header ion-icon.back-button-icon.icon {
+    color: map-get($colors, info);
+}
+.item1{
+background:#ff4400;
+color:white;
+text-align:center;
+}
+}
+

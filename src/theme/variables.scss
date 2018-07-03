@@ -1,0 +1,165 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #ff4400,
+  secondary:  green,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  color:#ff4400,
+  info:       #ff4400,
+  org: orange
+   );
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+//$item-md-detail-push-show:true;
+//$item-md-detail-push-show: true;
+//$item-ios-detail-push-show: true;
+$tabs-md-tab-icon-color-active:#ff4400;
+$loading-ios-background: none;
+$backdrap-color:#ff4400;
+$loading-md-background: $loading-ios-background;
+$loading-wp-background: $loading-ios-background;
+$toolbar-ios-border-color: #ff4400;
+$toolbar-md-border-color: #ff4400;
+$item-detail-push-show:true;
+$item-md-detail-push-show: true;
+$item-ios-detail-push-show: true;
+$button-text-transform: none;
+$select-ios-placeholder-color: #ff4400;
+$select-ios-font-size:17px;
+$text-input-ios-margin-top:15px;
+$item-ios-detail-push-color:#ff4400;
+$item-md-detail-push-color:#ff4400;
+
+.input{
+
+   border: 1.2px solid #ff4400 !important;
+   border-radius : 4px;
+   width:86%;
+   padding-left:5px;
+   font-size:16px;
+   margin-left:7%;
+   margin-right:7%;
+   color: #ff4400;
+
+ }
+ .button{
+   //margin-left:7%;
+  // margin-right:7%;
+      border-radius : 14px;    
+      width:100%;
+
+      //border-radius: 5px;
+   //-webkit-border-radius: 5px;
+    
+   //-webkit-background-clip: padding-box; 
+   //-moz-background-clip: padding; 
+   // background-clip: padding-box;
+   // border: 1.2px solid #ff4400;
+     
+ }
+ 
+ .background1{
+   width:6%;
+   border-radius : 4px;
+  // border: 1.2px solid green !important;
+  background: none !important;
+  background-color: none !important;
+  box-shadow: none !important;
+ }
+
+
+ .select{
+    border: 1.2px solid #ff4400 !important;
+   border-radius : 4px;
+   color: #ff4400;
+ }
+
+ .form-textarea input,select,textarea {
+
+  //  border: 1.2px solid #ff4400 !important;
+
+   // -webkit-border-radius: 4px;
+  //  -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+.text-input::-webkit-input-placeholder {
+  color: #FF4F00;
+  font-size: 15px;
+ 
+}
+.item-input-has-focus .input-cover,.input-has-focus .input-cover{
+  touch-action: none;
+  display: none;
+}

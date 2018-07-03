@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons left (click)="goback()">
+            <button class="button-1">
+      <ion-icon class="icon-2" name="arrow-back"></ion-icon>
+    </button>
+        </ion-buttons>
+        <ion-title style="text-align:center;color:#ff4400;"> <b>Restaurant Holidays</b></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <ion-list>
+        <ion-item class="item1" no-padding><b>List Of Holidays</b></ion-item>
+
+        <ion-item class="style1" text-wrap padding-left no-lines>
+            <ion-row>
+                <ion-col col-3 text-wrap> Holiday Name</ion-col>
+                <ion-col col-4> Start Date </ion-col>
+                <ion-col col-3> End Date</ion-col>
+                <ion-col col-2> Status</ion-col>
+            </ion-row>
+        </ion-item>
+
+        <ion-item-sliding *ngFor="let item of items;let index=index; let odd=odd; let even=even;">
+            <ion-item [ngClass]="{ odd: odd, even: even }" text-wrap no-lines padding-left padding-right>
+                <ion-row class="row">
+                    <ion-col col-3> {{item.name}} </ion-col>
+                    <ion-col col-4> {{item.start}}</ion-col>
+                    <ion-col col-4> {{item.end}}</ion-col>
+                    <ion-col col-1>
+                        <ion-icon name="{{item.icon}}" class="icon-1" padding-right> </ion-icon>
+                    </ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-item-options>
+                <button (click)="editfields(item)" style="color:#ff4400"><ion-icon name="create" style="font-size:35px" ></ion-icon><span style="position:obsulute"> Edit</span></button>
+            </ion-item-options>
+         
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

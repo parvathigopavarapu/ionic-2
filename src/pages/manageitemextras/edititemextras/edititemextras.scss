@@ -1,0 +1,81 @@
+page-editextraitem{
+
+.scroll-content{
+    overflow-y: scroll;
+}
+  .padding-t{
+    padding-bottom: 0;
+    // padding-left:5%;
+    font-size: 16px;
+     margin-left:8%;
+    margin-right:7%;
+    font-weight: bold;
+    margin-bottom: 0px;
+    color: gray;
+    margin-top:10px;
+}
+.toolbar-title{
+    overflow: visible;
+}
+    .even{
+        background: whitesmoke;
+        color:#ff4400;
+        height:100%;
+    }
+    .odd{
+        background:white;
+        color:#ff4400;;
+        height:100%;
+    }
+     .rowz{
+   text-align: center;
+   vertical-align: middle;
+   color:#ff4400;
+   width:15%;
+   border:1px solid #ff4400;
+   margin-top:1px;
+   text-align: center;
+  padding-left:0.5cm;
+  padding-right:0.5cm;
+  font-size:14px;
+}
+.text-input-md {
+   margin:0px 4px ;
+   height: 35px;
+   padding-bottom:5px;
+}
+.rowy{
+ color:#ff4400;
+ width:15%;
+ border:1px solid #ff4400;
+ margin-top:1px;
+ text-align: center;
+ vertical-align: middle;
+ justify-content: center;
+font-size:14px;
+}
+.col{
+    padding: 0px;
+}
+.list-md .item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child, .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus):last-child {
+   // border-bottom-color: none!important;
+    // -webkit-box-shadow: none!important; 
+    // box-shadow: none!important; 
+    // background-color: none!important;
+    border-bottom-color:none!important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.list-md .item-input:last-child {
+    border-bottom: none;
+    background-color: none!important;
+}
+.div.input-cover{
+    background-color: none;
+}
+ion-item.item.item-block.item-md.item-input.ng-untouched.ng-pristine.ng-valid.input-has-value.item-input-has-value
+{
+background-color: none!important;
+}
+
+}

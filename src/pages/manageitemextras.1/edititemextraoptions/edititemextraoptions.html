@@ -1,0 +1,269 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{name.day}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item style="text-align:center;color:white;background:#ff4400;font-weight:bold;font-size:18px">Edit Item Extra Option</ion-item>
+    <ion-segment [(ngModel)]="basic">
+        <ion-segment-button value="basic">Basic</ion-segment-button>
+        <ion-segment-button value="varities">Select ItemExtra Option</ion-segment-button>
+    </ion-segment>
+    <div [ngSwitch]="basic">
+        <div *ngSwitchCase="'basic'">
+            <p class="padding-t">Sequence:</p>
+            <ion-input type="text" placeholder="Sequence"></ion-input>
+
+            <p class="padding-t">Item Name:</p>
+            <ion-input type="text" placeholder="item Name"></ion-input>
+            <p class="padding-t">Notes:</p>
+            <textarea style="width:86%;margin-left:7%;margin-right:7%;height:60px;border:1.2px solid #ff4400;border-radius:5px" placeholder="Notes"></textarea>
+
+            <div style="border-radius:5px;margin-right:7%">
+                <ion-row style="margin-left:12px;text-align:center">
+                    <ion-col col-3>
+                        <p class="padding-t">Status:</p>
+                    </ion-col>
+                    <ion-col col-3 style="font-size:16px;color:green;">
+                        <ion-item no-lines>
+                            <ion-toggle color="secondary" class="padding-a" checked="false"></ion-toggle>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </div>
+            <p class="padding-t">Minimum:</p>
+            <ion-input type="text" placeholder="minimum"></ion-input>
+            <ion-fab right bottom style="position:fixed;margin-bottom:50px">
+                <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+                                <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+               </button>
+                <ion-fab-list side="top" style="font-size:60px;">
+                    <button ion-fab class="fabStartBtn" (click)="gotolist()"><b>Save</b></button>
+                    <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Cancel</b></button>
+                </ion-fab-list>
+            </ion-fab>
+        </div>
+        <div *ngSwitchCase="'varities'">
+            <ion-list border-bottom="none">
+                <ion-item-sliding *ngFor="let item of items;let odd=odd; let even=even;">
+                    <ion-item [ngClass]="{ odd: odd, even: even }" text-wrap no-lines style="height:100px;">
+                        <ion-row>
+                            <ion-col col-1 *ngIf="item.edit != true">
+
+                                <p style="color:#ff4400;;font-weight:bold;font-size:15px;">{{item.number}}</p>
+
+                            </ion-col>
+
+                            <ion-col col-1 *ngIf="item.edit == true">
+
+                                <p style="color:#ff4400;;font-weight:bold;font-size:15px">{{item.number}}</p>
+
+                            </ion-col>
+                            <ion-col col-7 *ngIf="item.edit != true">
+
+                                <p (click)="editfields($event,item,edit)" style="color:#ff4400"> {{ item.food }} </p>
+
+                            </ion-col>
+                            <ion-col col-7 *ngIf="item.edit == true">
+                                <ion-item no-lines no-border no-padding style="background-color:none;height:30px">
+                                    <ion-input (click)="savefields($event,item,edit)" style="padding-left:10px;color:#ff4400;height:30px;background-color:none"
+                                        [(ngModel)]="item.food"> </ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col col-2 *ngIf="item.edit != true">
+
+                                <p style="color:#ff4400;;font-weight:bold;font-size:15px">Price:</p>
+
+                            </ion-col>
+
+                            <ion-col col-2 *ngIf="item.edit == true">
+                                <p style="color:#ff4400;;font-weight:bold;font-size:15px">Price:</p>
+                            </ion-col>
+
+                            <ion-col *ngIf="item.edit2 != true">
+                                <p (click)="editfields2($event,item,edit2)" style="padding-left:10px;color:#ff4400"> ${{item.price}} </p>
+                            </ion-col>
+                            <ion-col *ngIf="item.edit2 == true">
+                                <ion-item no-lines no-border no-padding>
+                                    <ion-input (click)="savefields2($event,item,edit2)" style="padding-left:10px;color:#ff4400;height:30px;" [(ngModel)]="item.price">
+                                    </ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row>
+                            <ion-col col-1>
+                            </ion-col>
+                            <ion-col col-5 *ngIf="item.edit1 != true">
+
+                                <p (click)="editfields1($event,item,edit1)"> {{item.detail}}</p>
+
+                            </ion-col>
+                            <ion-col col-5 *ngIf="item.edit1 == true">
+                                <ion-item no-lines no-border no-padding>
+                                    <ion-input (click)="savefields1($event,item,edit1)" style="height:30px;" [(ngModel)]="item.detail"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                            <ion-col col-2>
+                                <ion-icon name="arrow-dropdown" style="padding:0;font-size:25px;margin-top:0px"></ion-icon>
+                            </ion-col>
+                            <ion-col col-3 *ngIf="item.edit3 != true">
+                                <p style="font-weight:bold;font-size:15px">Free Qty:</p>
+                            </ion-col>
+                            <ion-col col-1 *ngIf="item.edit3 != true">
+                                <p (click)="editfields3($event,item,edit3)" style="padding-left:10px">{{item.freeQty1}}</p>
+                            </ion-col>
+                            <ion-col *ngIf="item.edit3 == true">
+                                <p style="font-weight:bold;font-size:15px">Free Qty:</p>
+                            </ion-col>
+                            <ion-col *ngIf="item.edit3 == true">
+                                <ion-item no-lines no-border no-padding>
+                                    Free Qty:
+                                    <ion-input (click)="savefields3($event,item,edit3)" style="padding-left:10px;height:30px;" [(ngModel)]="item.freeQty1"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <!--ion-row *ngIf="item.edit == true">
+                            <ion-col>
+                                <ion-item>
+                                    <ion-input type="text" [(ngModel)]="item.food" (click)="savefields($event, item,edit)"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row *ngIf="item.edit == true">
+                            <ion-col>
+                                <ion-item>
+                                    <ion-input type="text" [(ngModel)]="item.detail" (click)="savefields($event, item,edit)"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row>
+                        <ion-row *ngIf="item.edit1 == true">
+                            <ion-col>
+                                <ion-item>
+                                    <ion-input type="text" [(ngModel)]="item.price" (click)="savefields1($event, item,edit1)"></ion-input>
+                                </ion-item>
+                            </ion-col>
+                        </ion-row-->
+                        <!--ion-col col-4 *ngIf="items.edit1 != true">
+                                <p (click)="editfields1($event,item,edit1)" style="padding-left:20px;color:#ff4400">Price:${{item.price}}</p>
+                                <p (click)="editfields($event,items,edit)"> Free Qty:0</p>
+                            </ion-col>
+                            <ion-col col-4 *ngIf="items.edit1 == true">
+                                <ion-item>
+                                    <ion-input (click)="savefields1($event, items,edit1)" style="padding-left:20px;color:#ff4400"
+                                        [(ngModel)]="item.price">Price:${{item.price}}</ion-input>
+                                </ion-item>
+                            </ion-col-->
+                        <!--</ion-row>-->
+                    </ion-item>
+                    <ion-item-options>
+                        <button ion-button (click)="editpopup(item)" class="rowz" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" style="font-size:25px" ></ion-icon>
+                 EDIT 
+                </button>
+                        <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px" ></ion-icon>
+                 DELETE
+                </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+            <!--ion-footer style="position:fixed;margin-bottom:33px;margin-right:0px;" no-border>
+                <button ion-button (click)="createItem(name)" style="margin-top:0px;background:none;background-color:none;box-shadow:none;width:100px;height:100px">   
+           <ion-icon name="add-circle" style="color:#ff4400;font-size:70px"></ion-icon>
+                      </button>
+            </ion-footer-->
+            <div *ngIf="variety1.Food_Name != null">
+                <ion-list border-bottom="none">
+                    <ion-item-sliding>
+                        <ion-item text-wrap no-lines style="height:100px;">
+                            <ion-row>
+                                <ion-col col-1>
+                                    <p style="color:#ff4400;;font-weight:bold;font-size:15px;">8.</p>
+                                </ion-col>
+                                <ion-col col-7>
+                                    <p style="color:#ff4400"> {{variety1.Food_Name }} </p>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <p style="color:#ff4400;;font-weight:bold;font-size:15px">Price:</p>
+
+                                </ion-col>
+                                <ion-col>
+                                    <p style="padding-left:10px;color:#ff4400"> ${{variety1.price1}} </p>
+                                </ion-col>
+                            </ion-row>
+                            <ion-row>
+                                <ion-col col-1>
+                                </ion-col>
+                                <ion-col col-5>
+                                    <p> {{variety1.details}}</p>
+                                </ion-col>
+                                <ion-col col-2>
+                                    <ion-icon name="arrow-dropdown" style="padding:0;font-size:25px;margin-top:0px"></ion-icon>
+                                </ion-col>
+                                <ion-col col-3>
+                                    <p style="font-weight:bold;font-size:15px">Free Qty:</p>
+                                </ion-col>
+                                <ion-col col-1>
+                                    <p style="padding-left:10px">{{variety1.free_quantity}}</p>
+                                </ion-col>
+
+                            </ion-row>
+                        </ion-item>
+                        <ion-item-options>
+                            <button ion-button (click)="editpopup(item)" class="rowz" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" style="font-size:25px" ></ion-icon>
+                 EDIT 
+                </button>
+                            <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px" ></ion-icon>
+                 DELETE
+                </button>
+                        </ion-item-options>
+                    </ion-item-sliding>
+                </ion-list>
+            </div>
+        </div>
+        <!--div *ngSwitchCase="'varities'">
+            <ion-list border-bottom="none">
+                <ion-item-sliding *ngFor="let item of items;let odd=odd; let even=even;">
+                    <ion-item [ngClass]="{ odd: odd, even: even }" text-wrap no-lines style="height:60px;" (click)="gotoanotherlist()">
+                        <ion-row>
+                            <ion-col col-8>{{item.number}}. {{ item.food }}
+                                <ion-row>
+                                    <ion-col col-8>
+                                        <p style="padding-left:10px"> {{item.detail}}</p>
+                                    </ion-col>
+                                    <ion-col>
+                                        <ion-icon name="arrow-dropdown" style="padding:0;font-size:25px;margin-top:0px"></ion-icon>
+                                    </ion-col>
+                                </ion-row>
+                            </ion-col>
+                            <ion-col col-4>
+                                <p style="padding-left:20px;color:#ff4400">Price:${{item.price}}</p>
+                                <p> Free Qty:0</p>
+                            </ion-col>
+                        </ion-row>
+                    </ion-item>
+                    <ion-item-options>
+                        <button ion-button (click)="editfields()" class="rowz" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" style="font-size:25px" ></ion-icon>
+                 EDIT 
+                </button>
+                        <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px" ></ion-icon>
+                 DELETE
+                </button>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>   
+        
+        </div-->
+    </div>
+    <ion-fab right bottom style="position:fixed;margin-bottom:50px">
+        <button ion-fab style="margin-top:0px;background:none;float:right;background-color:#ff4400 ;box-shadow:none;">   
+               <ion-icon name="create" style="color:white;font-size:30px"></ion-icon>
+        </button>
+        <ion-fab-list side="top" style="font-size:70px;">
+            <div>
+                <button ion-fab class="fabStartBtn" (click)="gotolist(itemname)"><b>Save</b></button>
+                <button ion-fab class="fabStartBtn" (click)="stayhere()"><b>Cancel</b></button>
+                <button ion-fab class="fabStartBtn" (click)="addvariety(variety1)"><b style="font-size:10px">Add Variety</b></button>
+                <!--<button ion-fab class="fabStartBtn" (click)="adddietary()"><b style="font-size:10px">Add Dietary</b></button>-->
+            </div>
+        </ion-fab-list>
+    </ion-fab>
+</ion-content>

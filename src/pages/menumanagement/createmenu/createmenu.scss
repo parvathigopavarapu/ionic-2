@@ -1,0 +1,60 @@
+page-createmenu{
+.item-a{
+text-align: center;
+color: white;
+background: #ff4400;
+font-size: 18px;
+margin-top:0px;
+padding-top:px
+}
+
+.label-ios{
+    font-weight: bold;
+}
+.label-md{
+    margin-top:0px;
+    font-weight: bold;
+    margin-left:7%;
+    margin-bottom: 0px;
+    padding : 0px;
+}
+.label-ios{
+    margin-top:0px;
+    font-weight: bold;
+    margin-left:7%;
+    margin-bottom: 0px;
+    padding : 0px;
+}
+.select{
+    margin-left: 7%;
+    margin-right: 7%;
+    min-width: 86%;
+}
+.margin{
+    margin-top:10px;
+}
+textarea{
+     margin-left: 7%;
+    margin-right: 7%;
+    width: 86%;
+    height:60px;
+    border:1.2px solid #ff4400;
+    border-radius: 5px;
+    color: #ff4400;
+}
+.input{
+    height:40px;
+    padding-top:0px; 
+}
+.select-md .select-icon{
+    height:15px;
+}
+.select-ios .select-icon{
+    height:15px;
+}
+.row{
+    margin-top:-10px;
+     margin-left: 5%;
+    margin-right: 7%;
+}
+}

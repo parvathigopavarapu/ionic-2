@@ -1,0 +1,37 @@
+<ion-content  class="scroll" style="text-align:center">
+    <h1 class="h1"><b> NoshDeck</b></h1>
+    <div class="top1"> <h6 class="label1"><b>Create an Account</b></h6></div>
+    <div class="padding-div1">
+        <ion-row>
+            <ion-col>
+                <ion-input type="text" placeholder="FirstName" class="input11"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input type="text" placeholder="LastName" class="input11"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input type="text" placeholder="Email" class="input11"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-input type="text" placeholder="Password" class="input11"></ion-input>
+            </ion-col>
+        </ion-row>
+        <ion-row >
+            <ion-col>
+                <button ion-button (click)="signup()" class="btn6"><b>Sign Up</b></button>
+            </ion-col>
+        </ion-row>
+        <ion-label class="label-class"> OR </ion-label>
+        <ion-row style="margin-top:25px">
+            <ion-col >
+                <button ion-button (click)="signin()" class="btn6"><b>Already have an Account?</b> </button>
+            </ion-col>
+        </ion-row>
+    </div>
+</ion-content>

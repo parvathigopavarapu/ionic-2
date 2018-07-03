@@ -1,0 +1,87 @@
+page-signup{
+.h1{
+  text-align: center;
+  font-family: Monotype Corsiva;
+  font-size: 40px;
+  color: #FF4F00;
+}
+ .label1{
+   text-align:center;
+   color:#FF4F00;
+   font-weight:bold;
+   font-size: 20px;
+ 
+  
+}
+
+.btn3{
+ //  border-radius: 6px;
+     background: white;
+   // width: 100%;
+   // border: 1px;
+    color: #FF4F00;
+   // border:1.2px solid #FF4F00;
+    font-weight: bold;
+    font-size: 17px;
+    text-transform: none;
+   // border-radius: 6px;
+}
+.btn2{
+ //  border-radius: 6px;
+     background: #FF4F00;
+   // width: 100%;
+  //  border: 1px;
+    color: white;
+    text-transform: none;
+  //  border:1.2px solid #FF4F00;
+   font-weight: bold;
+   font-size: 17px;
+   // border-radius: 6px;
+}
+.btn6{
+    background:  #FF4F00;
+    width: 86%;
+    border:1.2px solid #Ff4400;
+     border-radius: 4px;
+   // border: 1px;
+    color: white;
+   font-weight: bold;
+   font-size: 15px;
+   text-transform: none;
+   margin-left:7%;
+   margin-right:7%;
+}
+.input1{
+ 
+  background:white;
+   font-size: 17px
+}
+  .text-input::-webkit-input-placeholder {
+  color: #FF4F00;
+  
+}
+.scroll-content{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 40px !important
+}
+::-webkit-scrollbar {
+  border:none;
+  width:0;
+  background: none;
+}
+.top{
+  margin-top: 20px;
+}
+ion-input{
+  padding:0px;
+}
+
+.label-class{
+text-align:center;color:#FF4F00;margin-top:30px;font-weight:bold;font-size: 17px;
+}
+
+}
+page-signup input {
+    color: #FF4F00;
+}

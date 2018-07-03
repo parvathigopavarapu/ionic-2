@@ -1,0 +1,56 @@
+<ion-header>
+    <ion-navbar>
+
+        <ion-title>Restaurant Menu</ion-title>
+
+    </ion-navbar>
+</ion-header>
+<ion-content >
+    <div class="item-a" no-lines><b>List Of Menu </b></div>
+    <ion-list>
+           <ion-item-sliding  *ngFor='let item of items,let odd=odd; let even=even;let i = index' [animateItemSliding]="shouldAnimate &amp;&amp; i==0 ">
+     
+            <ion-item no-lines [ngClass]="{ odd: odd, even: even }">
+                <p style="margin-top:20px;color:#ff4400"><ion-row>{{item.day}}</ion-row></p>
+                <p><ion-row>{{item.detail}}</ion-row></p>
+                <p style="color:#ff4400;background:none!important;">
+                    <ion-row  style="background:none!important;color:#ff4400">
+                        <ion-col col-5 style="text-align:left">
+                            <ion-item no-lines style="background:none;color:#ff4400;padding-left:0px">
+                            Category
+                            <ion-badge>{{item.badge_c}}</ion-badge></ion-item>
+                        </ion-col>
+                        <ion-col col-4>
+                            <ion-item no-lines style="background:none;color:#ff4400">Items
+                            <ion-badge>{{item.badge_i}}</ion-badge></ion-item>
+                        </ion-col>
+                        <ion-col col-3>
+                            <ion-item style="background:none;" no-lines>
+                                <ion-toggle color="secondary" checked="false" *ngIf="item.icon == 'false'"></ion-toggle>
+                                 <ion-toggle color="secondary" checked="true" *ngIf="item.icon == 'true'"></ion-toggle>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                </p>
+            </ion-item>
+            <ion-item-options class="sf-page in">
+                <button ion-button (click)="manage(item)" class="rowa" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" class = "icon-class" ></ion-icon>
+                 MANAGE
+                </button>
+                <button ion-button (click)="edit(item)" class="rowz" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" class = "icon-class" ></ion-icon>
+                 EDIT 
+                </button>
+                <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" class = "icon-class" ></ion-icon>
+                 DELETE
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+        <ion-footer style="position:fixed;margin-bottom:50px;" no-border>
+            <button ion-button (click)="createmenu()" style="margin-top:0px;margin-left:180px;float:right;background:none;background-color:none;box-shadow:none;width:100px;height:100px">   
+           <ion-icon name="add-circle" style="color:#ff4400;font-size:70px;"></ion-icon>
+             </button>
+        </ion-footer>
+    </ion-list>
+
+</ion-content>
+

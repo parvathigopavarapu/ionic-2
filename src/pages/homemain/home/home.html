@@ -1,0 +1,100 @@
+<ion-header>
+  <ion-navbar align-title="center">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title style=" text-align: center">
+      <b>Home</b>
+    </ion-title>
+    <button ion-button class="background1" style="background-color:rgb(251,251,251);float:right">
+      <ion-icon name="md-refresh" style="float:right;font-size:25px" (click)="openLoadingmodal()" item-end></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-item class="label-neworders" style="background-color :#ff4400" no-padding>
+    <ion-label class="text-center" id="text-middle">
+      <b>{{name}}</b>
+    </ion-label>
+  </ion-item>
+  <ion-grid>
+    <ion-row text-center>
+      <ion-col class="orders" col-4 (click)="openOrdersPage()">
+        <div class="orderss">
+          <ion-icon name="cart" class="icon-style" id="cart"></ion-icon>
+          <ion-badge class="badge-order">26</ion-badge>
+          <div class="paddingtop">Orders</div>
+        </div>
+      </ion-col>
+      <ion-col class="orders" (click)="openRestaurantMenuPage()" col-4>
+        <div class="orderss">
+          <ion-icon name="calendar" class="icon-style"></ion-icon>
+          <div>Restaurant Holidays List</div>
+        </div>
+      </ion-col>
+      <ion-col class="orders" col-4 (click)="openSettingsPage()">
+        <div class="orderss">
+          <ion-icon name="settings" class="icon-style"></ion-icon>
+          <div>Settings</div>
+        </div>
+
+      </ion-col>
+    </ion-row>
+    <ion-row text-center>
+      <ion-col class="orders" col-4 (click)="openChartsPage()">
+        <div class="orderss">
+          <ion-icon name="stats" class="icon-style"></ion-icon>
+          <div>Charts</div>
+        </div>
+      </ion-col>
+      <ion-col class="orders" col-4 (click)="openOpeningHoursPage()">
+        <div class="orderss">
+          <ion-icon name="time" class="icon-style"></ion-icon>
+          <div>Opening Hours</div>
+        </div>
+      </ion-col>
+      <ion-col class="orders" col-4 (click)="openDeliveryzonePage()">
+        <div class="orderss">
+          <ion-icon name="globe" class="icon-style"></ion-icon>
+          <div>Delivery Zone</div>
+        </div>
+      </ion-col>
+      <ion-col class="orders" col-4 (click)="openAboutUsPage()">
+        <div class="orderss">
+          <ion-icon name="information-circle" class="icon-style"></ion-icon>
+          <div>AboutUs</div>
+        </div>
+      </ion-col>
+      <ion-col class="orders" col-4 (click)="menu_management()">
+        <div class="orderss">
+          <ion-icon name="calendar" class="icon-style"></ion-icon>
+          <div>Menu Management</div>
+        </div>
+      </ion-col>
+      <ion-col class="orders" (click)="openMenuPage()" col-4>
+        <div class="orderss">
+          <ion-icon name="restaurant" class="icon-style"></ion-icon>
+          <div>Menu</div>
+        </div>
+      </ion-col>
+
+      <ion-col class="orders" (click)="openotherPage()" col-4>
+        <div class="orderss">
+          <ion-icon name="restaurant" class="icon-style"></ion-icon>
+          <div>Table Reservation</div>
+        </div>
+      </ion-col>
+      <ion-col class="orders" (click)="openmenureorderpage()" col-4>
+        <div class="orderss">
+          <ion-icon name="restaurant" class="icon-style"></ion-icon>
+          <div>Menu Reorder</div>
+        </div>
+      </ion-col>
+    </ion-row>
+    <ion-row text-center>
+
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

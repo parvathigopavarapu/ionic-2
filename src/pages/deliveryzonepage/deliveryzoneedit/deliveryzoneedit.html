@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>Editing Delivery Zones</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item class="header-x" no-padding>Jp Nagar, Bangalore</ion-item>
+<p class="padding-a">Zone:</p>
+<ion-input type="text" placeholder = "Zone"></ion-input>
+<p class="padding-a">Coverage Radius:</p>
+<ion-input type="text" placeholder ="Coverage Radius" ></ion-input>
+<p class="padding-a">Minimum Order Value:</p>
+<ion-input type="text" placeholder ="Minimum Order Value"></ion-input>
+<p class="padding-a">Deliver Charge:</p>
+<ion-input type="text" placeholder ="Deliver Charge"></ion-input>
+<p class="padding-a">Free Delivery Above:</p>
+<ion-input type="text" placeholder ="Free Delivery Above" ></ion-input>
+<ion-item class = "padding-b" no-lines>
+    <ion-row >
+        <ion-col col-6><button  ion-button (click)="update()">UPDATE</button></ion-col>
+         <ion-col col-6><button  ion-button (click)="cancel()">CANCEL</button></ion-col>
+    </ion-row>
+</ion-item>
+</ion-content>

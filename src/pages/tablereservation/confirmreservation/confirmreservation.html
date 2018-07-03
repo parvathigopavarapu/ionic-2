@@ -1,0 +1,326 @@
+<ion-header>
+    <ion-navbar>
+        <ion-buttons right>
+            <button (click)="close()" class="button-a"><ion-icon name="close"></ion-icon></button>
+        </ion-buttons>
+        <ion-title style="font-weight:bold"><b>Table Reservation</b></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item style="text-align:center;background:#ff4400;font-size:18px;color:white;margin-bottom:0%" no-lines><b>Confirm Reservation</b></ion-item>
+       <div *ngIf="create != 'create'">
+    <div *ngIf="data1 != 'confirm'">
+        <p class="item2" style="text-align: center;color:#666666;font-size:16px;font-weight:bold;margin-top:2px;" no-lines no-padding>Step 1 of 2</p>
+    </div>
+       </div>
+     <div *ngIf="create == 'create'">
+        <p class="item2" style="text-align: center;color:#666666;font-size:16px;font-weight:bold;margin-top:2px;" no-lines no-padding>Step 2 of 2</p>
+    </div>
+    <div *ngIf="data1 == 'confirm'">
+        <p class="item2" style="text-align: center;color:#666666;font-size:16px;font-weight:bold;margin-top:2px;" no-lines no-padding>Step 2 of 2</p>
+    </div>
+    <ion-item-group style="margin-top:-15px">
+
+        <ion-item class="item1" no-padding>
+            <p class="padding-a">Name: <b>Asha</b></p>
+            <p class="padding-a">Phone: <b>96369569322</b></p>
+            <p class="padding-a">Email:<b> ashi@gmail.com</b></p>
+            <ion-icon name="contacts" style="margin-left:15%;color:#999999;font-size:20px" item-end>8</ion-icon>
+            <p class="padding-a">Reserved Time: <b> 08:30 PM</b></p>
+        </ion-item>
+    </ion-item-group>
+
+    <ion-list style="border:1.2px solid #ff4400;padding-left:4px;margin-left:4%;margin-right:4%;margin-top:0px" padding>
+
+
+     
+     <ion-row>
+            <ion-col col-3>
+                <ion-item no-lines no-padding style="margin-top:-17px;color:#999999"> 15:00 PM</ion-item>
+            </ion-col>
+
+            <ion-col>
+                <ion-row>
+                    <div *ngIf="time == '15:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <ion-col>
+                    </ion-col>
+                    <div *ngIf="time > '15:00' ">
+                        <div *ngIf = "time < '16:00'">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:10px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    </div>
+                    <ion-col>
+
+                    </ion-col>
+                    <div *ngIf="time == '15:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time > '15:00' ">
+                        <div *ngIf = "time < '16:00'">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:10px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    </div>
+                </ion-row>
+            </ion-col>
+
+        </ion-row>
+    
+    <ion-row>
+            <ion-col col-3>
+                <ion-item no-lines no-padding style="margin-top:-17px;color:#999999"> 16:00 PM</ion-item>
+            </ion-col>
+
+            <ion-col>
+                <ion-row>
+                    <div *ngIf="time == '16:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '16:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <ion-col>
+
+                    </ion-col>
+                    <div *ngIf="time == '16:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '16:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                </ion-row>
+            </ion-col>
+
+        </ion-row>
+
+
+        <ion-row>
+           <ion-col col-3>
+                <ion-item no-lines no-padding style="margin-top:-17px;color:#999999"> 17:00 PM</ion-item>
+            </ion-col>
+
+            <ion-col>
+                <ion-row>
+                    <div *ngIf="time == '17:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '17:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <ion-col>
+                    </ion-col>
+                    <div *ngIf="time == '17:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;margin-left:60px;border:1px;background:#999999;color:white;width:30px;height:0px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '17:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;margin-left:60px;border:1px;background:#999999;color:white;width:30px;height:0px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <ion-col>
+                    </ion-col>
+                    <!--div *ngIf="data1 != 'confirm'">
+                        <ion-col>
+                            <ion-item class="arrow" no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;text-align:center">+{{person}}</ion-item>
+                        </ion-col>
+                    </div>
+
+
+                    <div *ngIf="data1 == 'confirm'">
+                        <ion-col>
+                            <ion-item class="arrow" no-padding style="margin-top:0px;border:1px;background:#009933;color:white;width:30px;height:0px;text-align:center">+{{person}}</ion-item>
+                        </ion-col>
+                    </div-->
+
+                </ion-row>
+            </ion-col>
+        </ion-row>
+
+
+<ion-row>
+            <ion-col col-3>
+                <ion-item no-lines no-padding style="margin-top:-17px;color:#999999"> 18:00 PM</ion-item>
+            </ion-col>
+
+            <ion-col>
+                <ion-row>
+                    <div *ngIf="time == '18:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '18:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <ion-col>
+
+                    </ion-col>
+                    <div *ngIf="time == '18:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '18:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                </ion-row>
+            </ion-col>
+
+        </ion-row>
+      
+       <ion-row>
+            <ion-col col-3>
+                <ion-item no-lines no-padding style="margin-top:-17px;color:#999999"> 19:00 PM</ion-item>
+            </ion-col>
+
+            <ion-col>
+                <ion-row>
+                    <div *ngIf="time == '19:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '19:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <ion-col>
+
+                    </ion-col>
+                    <div *ngIf="time == '19:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '19:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                </ion-row>
+            </ion-col>
+
+        </ion-row>
+        <ion-row>
+            <ion-col col-3>
+                <ion-item no-lines no-padding style="margin-top:-17px;color:#999999"> 20:00 PM</ion-item>
+            </ion-col>
+
+            <ion-col>
+                <ion-row>
+                    <div *ngIf="time == '20:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '20:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#ff4400;color:white;width:80px;height:0px;text-align:center">{{person}}
+                                <!--<ion-icon name="grid" style="color:white;font-size:20px;"></ion-icon>-->
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <ion-col>
+
+                    </ion-col>
+                    <div *ngIf="time == '20:00' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                    <div *ngIf="time == '20:30' ">
+                        <ion-col>
+                            <ion-item no-padding style="margin-top:0px;border:1px;background:#999999;color:white;width:30px;height:0px;margin-left:15px;text-align:center">{{person}}
+                            </ion-item>
+                        </ion-col>
+                    </div>
+                </ion-row>
+            </ion-col>
+
+        </ion-row>
+
+    </ion-list>
+   
+    <div style="margin-top:15px;margin-left:3%;margin-right:4%" *ngIf="datax == 'confirm2' ">
+        <button ion-button (click)="select(person,time)">SELECT SLOT</button>
+        <button ion-button (click)="confirm(time,person)">CONFIRM RESERVATION</button>
+    </div>
+
+
+    <div *ngIf="data1 == 'confirm'">
+        <p style="text-align:center;color:#ff4400;font-size:16px;margin-left:4%;margin-right:4%;font-weight:bold;margin-top:10px">
+            The reservation status has been updated to CONFIRMED successfully</p>
+    </div>
+    <div style="margin-top:15px;margin-left:24%;margin-right:7%;width:50%;font-weight:bold;font-size:14px" *ngIf="data1 == 'confirm' ">
+        <button ion-button (click) = 'gotoReservationList()'>CLOSE</button>
+    </div>
+
+
+    <div style="margin-top:25px;margin-left:10%;margin-right:7%" *ngIf = "create == 'create'">
+     <p style="text-align:center;color:#ff4400;font-size:16px;margin-left:4%;margin-right:4%;font-weight:bold;margin-top:-10px">   
+         The reservation status has been updated to CREATED successfully
+     </p>
+        <div style="margin-top:5px;margin-left:24%;margin-right:7%;width:50%;font-weight:bold;font-size:14px"><button ion-button (click) = 'gotoCreatePage(person,time)'  style="width:86%" >CLOSE</button></div>
+ </div>
+</ion-content>

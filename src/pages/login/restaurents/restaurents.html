@@ -1,0 +1,14 @@
+<ion-header border-bottom="2px" style="padding-bottom: 0px">
+  <ion-navbar>
+    <ion-title  >Restaurant List</ion-title>
+     
+  </ion-navbar>
+</ion-header>
+<ion-content >
+<ion-card  *ngFor="let item of items" (click) = "gotoHomepage(item)">
+<!--<ion-card  >-->
+    <ion-card-header class="card1"   >{{item.name}}</ion-card-header>
+    <ion-card-content class="card2">{{item.address}}</ion-card-content>
+</ion-card>
+<!--</button>-->
+</ion-content>

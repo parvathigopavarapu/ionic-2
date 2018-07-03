@@ -1,0 +1,27 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="back-arrow"></ion-icon>
+    </button>
+        <ion-title style="background-color:white;color:#ff4400"><b style="color:#ff4400">{{name.day}}</b></ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-item class="label-neworders" style="background-color :#ff4400" no-padding>
+        <ion-label class="text-center" id="text-middle"><b>Edit Selected ItemExtra Options</b></ion-label>
+    </ion-item>
+
+    <p class="padding-a">Item Name:</p>
+    <ion-input type="text" placeholder="Item Name"></ion-input>
+    <p class="padding-a">Option:</p>
+    <ion-input type="text" placeholder="Sequence"></ion-input>
+       <p class="padding-a">Price:</p>
+    <ion-input type="text" placeholder="Item Name"></ion-input>
+        <p class="padding-a">Free Quantity:</p>
+    <ion-input type="text" placeholder="Item Name"></ion-input>
+    <ion-row padding class="margin">
+        <ion-col col-12>
+            <button ion-button class="button-class" (click)="gotopreviouspage()" class="width"><b>SAVE</b></button></ion-col>
+      
+    </ion-row>
+</ion-content>

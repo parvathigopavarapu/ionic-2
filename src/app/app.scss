@@ -1,0 +1,64 @@
+
+.activeHighLight {
+    background-color: map-get($colors,#ff4400 )
+}
+.subtitle{
+    margin-left: 45px;
+}
+.text-color-maroon{
+    color: #ff4400;
+   
+}
+.alertcss{
+.buttons{
+    color: #ff4400;
+}
+}
+ .ion-menu[type =overlay]{
+     z-index: 0
+ }
+ .bar-button::after {
+        color: #ff4400;
+    }
+ion-header span.back-button-text.back-button-text-ios {
+   color: #FF4400;
+}
+.modal-wrapper{
+   position: absolute;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    border: 0;
+    animation: 'slide-in-right';
+}
+.item-md[detail-push] .item-inner, button.item-md:not([detail-none]) .item-inner, a.item-md:not([detail-none]) .item-inner {
+   
+    padding-right: 32px;
+    background-position: right 14px center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+}
+.item-ios[detail-push] .item-inner, button.item-ios:not([detail-none]) .item-inner, a.item-ios:not([detail-none]) .item-inner {
+   
+    padding-right: 32px;
+    background-position: right 14px center;
+    background-repeat: no-repeat;
+    background-size: 15px;
+}
+.button{
+    border-radius:4px;
+}
+.item-input-has-focus .input-cover,.input-has-focus .input-cover{
+  touch-action: none;
+  display: none;
+}
+$font-family-md-base: "Monotype Corsiva;";
+$font-family-ios-base: "Monotype Corsiva;";
+$font-family-wp-base: "Monotype Corsiva;";
+
+

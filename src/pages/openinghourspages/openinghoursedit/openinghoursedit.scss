@@ -1,0 +1,34 @@
+page-editopeninghours{
+    .color{
+        padding-left: 35px;
+        padding-bottom: 0px;
+        margin-bottom: 0px;
+    }
+    .border{
+        border:1.2px solid #ff4400;
+        border-radius:5px ;
+        width:100%;
+        margin-left:0px;
+        margin-right:0px;
+      //  padding-left: 20px;
+    }
+    .padding-btn{
+      padding-left: 7%;
+       padding-right: 8%;
+    }
+    .icon3{
+    color: #ff4400;
+    font-size: 40px;
+    font-weight: bold;
+    }
+.btn1{
+    background: none;
+    background-color: none;
+    box-shadow: none;
+    border: none;
+}
+ion-select{
+    max-width: 100%;
+}
+
+}

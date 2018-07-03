@@ -1,0 +1,23 @@
+.card1{
+    width: 100%;
+}
+/*.row{
+border-bottom: 1px solid lightgrey;
+border-top: 1px solid lightgray;
+}*/
+.row1{
+    border-top-style:dashed;
+   border-bottom-style:inset;
+    color:black;
+    margin-top:15px;
+    padding: 0px;
+   // margin-bottom:15px;
+}
+.row2{
+    border-top-style:none;
+    border-bottom-style:dashed;
+    color:black;
+    margin-top:15px;
+    padding: 0px;
+   // margin-bottom:15px;
+}

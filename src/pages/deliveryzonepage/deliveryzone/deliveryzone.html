@@ -1,0 +1,42 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+        <ion-title color="info">Delivery Zones</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+
+    <ion-item class="header1">From: 5 Station Road NG34 7RG</ion-item>
+    <ion-grid class="vertical-align-content11">
+        <ion-row class="header2">
+            <ion-col>Zone</ion-col>
+            <ion-col>Coverage Radius (inkm)</ion-col>
+            <ion-col>Maximum Order value </ion-col>
+            <ion-col>Deliver Change</ion-col>
+            <ion-col> free delivery above</ion-col>
+        </ion-row>
+    </ion-grid>
+    <ion-list border-bottom="none">
+        <ion-item-sliding *ngFor="let item of items;let index=index; let odd=odd; let even=even;">
+            <ion-item [ngClass]="{ odd: odd, even: even }" text-wrap no-lines>
+                <ion-row class="row">
+                    <ion-col>{{item.zone}}</ion-col>
+                    <ion-col>{{item.cov}}</ion-col>
+                    <ion-col>{{item.max}}</ion-col>
+                    <ion-col>{{item.del}}</ion-col>
+                    <ion-col>{{item.free}}</ion-col>
+                </ion-row>
+            </ion-item>
+            <ion-item-options>
+                <button ion-button (click)="editfields(item)" class="rowz" [ngClass]="{ odd: odd, even: even }"><ion-icon name="create" style="font-size:25px" ></ion-icon>
+                 EDIT 
+                </button>
+                <button ion-button (click)="deletefields(item)" class="rowy" [ngClass]="{ odd: odd, even: even }"><ion-icon name="trash" style="font-size:25px" ></ion-icon>
+                 DELETE
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+</ion-content>

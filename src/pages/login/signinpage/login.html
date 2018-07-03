@@ -1,0 +1,54 @@
+<ion-content>
+  <h2 class="h1"> <b>NoshDeck</b></h2>
+  <h6 class="h4"><b>Sign In</b></h6>
+  <div class="vertical-align-content1">
+    <div>
+      <ion-row>
+        <ion-col>
+          <ion-input [(ngModel)]="usercreds.name" type="email" placeholder="Email" class="email-class"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-input [(ngModel)]="usercreds.password" type="password" placeholder="Password" class="email-class"></ion-input>
+        </ion-col>
+      </ion-row>
+      <ion-item *ngIf='failure' no-lines>
+        <ion-label color="info">*login failure - Incorrect username or password</ion-label>
+      </ion-item>
+      <ion-row>
+        <ion-col>
+          <button ion-button (click)="login(usercreds)" class="btn3 col1" id="button-cls2"><b>Sign in</b></button></ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button class="login" (click)="gotofotgotpasswordpage()"><span style="margin-left:80px">Forgot Password?</span></button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div>
+      <ion-row>
+        <ion-col>
+          <button ion-button (click)="login(usercreds)" class="fb-class col1">
+          <ion-icon name="logo-facebook" class="icon-class">
+            </ion-icon><span style="margin-left:15px"><b> Signin with Facebook </b></span></button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button ion-button (click)="login(usercreds)" class="btn3 col1" id="button-cls"><ion-icon item-first name="logo-googleplus" style="color:white;font-size:35px"></ion-icon> <span style="margin-left:15px"><b>Signin with Google+</b></span></button>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div>
+      <ion-label class="or-cls"> OR </ion-label>
+    </div>
+    <div>
+      <ion-row>
+        <ion-col>
+          <button ion-button (click)="signup()" class="btn6 col1" id="button-cls2"><b>Sign Up</b></button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+</ion-content>

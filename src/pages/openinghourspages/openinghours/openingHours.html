@@ -1,0 +1,114 @@
+<ion-header>
+  <ion-navbar >
+    <ion-buttons left>
+      <button ion-button class="btn1" (click)="goback()">
+          <ion-icon name="arrow-back" class="icon3"></ion-icon>
+        </button>
+    </ion-buttons>
+    <ion-title style="text-align:center;color:#ff4400;;"><b>Opening Hour</b></ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+
+  <ion-list>
+    <ion-item class="item1" no-padding no-lines><b>Sunday @ 6:00am - OPEN </b></ion-item>
+    <ion-item-group>
+      <ion-item style="background:lightgray;color:white;text-align:center" no-lines no-padding>
+        <ion-label>Day</ion-label>
+        <ion-label>Open</ion-label>
+        <ion-label>Close</ion-label>
+      </ion-item>
+      <ion-item-sliding *ngFor="let item of items;let index=index; let odd=odd; let even=even;" style="text-align:center">
+        <ion-item [ngClass]="{ odd: odd, even: even } " class="row " no-lines no-padding>
+          <ion-label *ngIf="item.days != day || item.days == day2"> {{item.days}}</ion-label>
+          <ion-label *ngIf="item.days != day || item.days == day2"> {{item.open}}</ion-label>
+          <ion-label *ngIf="item.days != day || item.days == day2"> {{item.close}}</ion-label>
+          <!--ion-label *ngIf="item.days == day"> {{day}}</ion-label>
+          <ion-label *ngIf="item.days == day"> {{open1}}</ion-label>
+          <ion-label *ngIf="item.days == day"> {{close1}}</ion-label-->
+        </ion-item>
+        <ion-item-options [ngClass]="{ odd: odd, even: even } ">
+          <button (click)="editfields(item)" id="color1"><ion-icon name="create" class="icon-cls"></ion-icon> Edit</button>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>
+
+
+
+<!--ion-content>
+
+
+  <ion-list>
+    <ion-item class="item1" no-padding no-lines><b>Sunday @ 6:00am - OPEN </b></ion-item>
+    <ion-item-group>
+      <ion-item style="background:lightgray;color:white;text-align:center" no-lines no-padding>
+        <ion-label>Day</ion-label>
+        <ion-label>Open</ion-label>
+        <ion-label>Close</ion-label>
+      </ion-item-->
+
+      <!--<ion-item-sliding *ngFor="let item of items;let index=index; let odd=odd; let even=even;" style="text-align:center">-->
+
+      <!--ion-row *ngFor="let item of items" [ngClass]="{ odd: odd, even: even } " class="row " no-lines no-padding>
+          <ion-col>
+            <ion-input class="input-x" *ngIf="item.days != day || item.days == day2" [(ngModel)]="item.days"></ion-input>
+          </ion-col>
+          <ion-col>
+       -     <ion-input class="input-x" *ngIf="item.days != day || item.days == day2" [(ngModel)]="item.open"></ion-input>
+          </ion-col>
+          <ion-col>
+            <ion-input class="input-x" *ngIf="item.days != day || item.days == day2" [(ngModel)]="item.close"></ion-input>
+          </ion-col>
+
+          <ion-label *ngIf="item.days == day"> {{day}}</ion-label>
+          <ion-label *ngIf="item.days == day"> {{open1}}</ion-label>
+          <ion-label *ngIf="item.days == day"> {{close1}}</ion-label>
+        </ion-row>
+      
+        <ion-item-options [ngClass]="{ odd: odd, even: even } ">
+
+          <button (click)="editfields(item)" id="color1"><ion-icon name="create" class="icon-cls"></ion-icon> Edit</button>
+        </ion-item-options-->
+      <!--ion-row *ngFor="let item of items;let index=index;let odd=odd; let even=even;"  style="text-align:center">
+       <ion-col>
+
+          <ion-label *ngIf = "editing == false"  > {{item.days}}</ion-label>
+        
+        <input type="text" *ngIf = "editing == true" [ngClass]="{ odd: odd, even: even } " [(ngModel)]="item.days"/>
+          
+       </ion-col>
+       <ion-col>
+         <ion-label *ngIf = "editing == false"  > {{item.open}}</ion-label>
+        
+        <input type="text" *ngIf = "editing == true" [ngClass]="{ odd: odd, even: even } " [(ngModel)]="item.open"/>
+  
+       </ion-col>
+       <ion-col>
+         <ion-label *ngIf = "editing == false"  > {{item.close}}</ion-label>
+      
+        <input type="text" *ngIf = "editing == true" [ngClass]="{ odd: odd, even: even } "  [(ngModel)]="item.close"/>
+          
+       </ion-col>
+       <ion-col>
+     <button   *ngIf = "editing == false"  (click)="edit(item,editing,index)" >Edit</button>
+    
+      <button   *ngIf = "editing == true"  (click)="save(item,editing,index)" >save</button>
+ 
+       </ion-col>
+      </ion-row>
+    </ion-item-group>
+    
+  </ion-list-->
+
+
+
+  <!--div>
+    <ion-input #inlineEditControl [required]="required" (blur)="onBlur($event)" [name]="value" [(ngModel)]="value" [type]="type" [placeholder]="label" >{{item.days}}</ion-input>
+  </div>
+
+
+
+</ion-content-->

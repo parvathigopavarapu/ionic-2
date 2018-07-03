@@ -1,0 +1,154 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+    <ion-icon style="font-size:40px" name="arrow-back"></ion-icon>
+     </button>
+        <ion-title>Nosh Deck</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content style="background-color:antiquewhite">
+    <!-- Breadcrumb -->
+<nav class="breadcrumb" padding-top="3">
+  <a class="breadcrumb-item" href="#">Home/</a>
+  <a class="breadcrumb-item" href="#">NG34-Bsk/</a>
+  <a class="breadcrumb-item" href="#">@Chilli Hut/</a>
+  <span class="breadcrumb-item active">Menu</span>
+</nav> 
+
+    <ion-card>
+
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <div>
+                        <img src="assets/icon/restaurant2.jpg" style="height:60px;width:40px" /></div>
+                </ion-col>
+                <ion-col>
+                    <ion-card-header style="color:maroon"> Chilli Hut </ion-card-header>
+                    <ion-card-content>
+                        <div><b> Phone</b> 012365478963</div>
+                        <div><b>  Address </b> Station road</div>
+                        <div> Uttarahalli,Bsk,562117</div>
+                    </ion-card-content>
+                </ion-col>
+
+                <!--</ion-col>-->
+                <ion-col>
+                    <ion-card-content>
+                        <div> Rating 5/10</div>
+                        <div> Opening Hours</div>
+                        <div> Fri:17:00-23:00</div>
+                        <button ion-button>CLOSED</button>
+                    </ion-card-content>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-card>
+    <!--</ion-col>-->
+    <!--</ion-row>-->
+    <!--</ion-list>-->
+
+    <button ion-button style="background-color:white;color:black" outline>Menu</button>
+    <button ion-button style="background-color:lightgray;color:black" outline>Info</button>
+    <button ion-button style="background-color:lightgray;color:black" outline>Map</button>
+    <button ion-button style="background-color:lightgray;color:black" outline>Review</button>
+    <hr> DISCLAIMER: Food substitutes may be used in place of some ingredients.
+    <hr>
+
+    <!--<ion-list>-->
+    <!--<ion-row>-->
+    <!--<ion-col col-2><button ion-button>Search<ion-icon name=search></ion-icon></button> </ion-col>-->
+    <!--ion-col col-8-->
+    <hr>
+    <ion-searchbar></ion-searchbar>
+    <!--/ion-col-->
+    <hr>
+    <!--<ion-col col-2> <button ion-button>Reset<ion-icon name=circle></ion-icon></button> </ion-col>-->
+    <!--</ion-row></ion-list>-->
+    <ion-card>
+        <ion-card-header>Starter</ion-card-header>
+        <ion-list>
+
+            <ion-row *ngFor="let item of items">
+                <!--<ion-row>-->
+                <ion-col col-1> {{item.num}}.</ion-col>
+                <ion-col col-3> {{item.name}}</ion-col>
+                <ion-col col-2> = </ion-col>
+                <ion-col col-3> ${{item.price}}</ion-col>
+                <button ion-button style="background-color:white;height:20px;width:20px" outline> 
+                       <ion-icon name ="add" style="font-weight:bold" ></ion-icon>
+                      <hr> </button>
+            </ion-row>
+        </ion-list>
+    </ion-card>
+    DISCLAIMER: Restaurant information, menu items and prices are subject to change. Check with the restaurant for accurate menu
+    items, pricing and information pertaining to the restaurant. NoshDeck is not responsible for the accuracy of the information
+    provide<br>
+    <ion-card style="padding-top:40px;padding-left:30px">
+        <ion-list>
+            <ion-card-content> Your Order at
+                <button ion-button style="background-color:lightgray;color:maroon;width:200px;height:50px">@Chilli Hut@ </button></ion-card-content>
+            <ion-card-content style="background-color:lightpink;width:250px" text-wrap>Restaurant is currently closed! Opening hours: Fri : 17:00 - 23:59</ion-card-content>
+            <br>
+            <ion-list>
+                <ion-card-content> Delivery Option
+               
+                        <ion-row class="row1">
+                      <ion-col col-2><input type="radio" name="collection" value="collection" style="margin-bottom:0px"> </ion-col>
+                        <ion-col col-6>Collection</ion-col>
+                        <ion-col col-3>$12.30</ion-col><hr></ion-row>
+                      
+                        <ion-row class="row2">
+                   <ion-col col-2><input type="radio" name="delivery" value="delivery"> </ion-col>
+                    <ion-col col-6>Delivery</ion-col>
+                    <ion-col col-3>$00.00</ion-col>
+                </ion-row>
+                    </ion-card-content>
+                    <ion-card-content style="background-color:lightpink;width:250px" text-wrap>A valid delivery postcode required</ion-card-content>
+           <ion-card-content>
+            <ion-row class="row2">
+           
+                <ion-col>
+                <ion-searchbar placeholder ="Full postcode"></ion-searchbar>
+                </ion-col>
+                <ion-col>
+                <button ion-button>Apply</button>
+                </ion-col>
+            </ion-row>
+            </ion-card-content>
+             <ion-card-content>
+            <ion-row class="row2">
+               
+                Cart items<ion-badge>1</ion-badge>
+               
+            </ion-row>
+             </ion-card-content>
+             <ion-card-content>
+         <ion-card-header style="background-color:whitesmoke">Starter</ion-card-header>
+            <ion-row>
+           <ion-col> 1. King Prawn Butterfly </ion-col>
+              <ion-col>  <ion-badge>X1</ion-badge> </ion-col>
+           <ion-col>  £14.30</ion-col>
+            <ion-col>   <ion-icon name="add"></ion-icon>
+           <ion-icon name="md-remove"></ion-icon>
+         <ion-icon name="trash"></ion-icon></ion-col>
+            </ion-row>
+             </ion-card-content>
+             <!--ion-card-content>
+                 <ion-row class="row2">
+                     <ion-col>Items Total</ion-col>
+                     <ion-col>£ 4.50</ion-col>
+                 </ion-row>
+                 <ion-row class="row2">
+                     <ion-col>Delivery Charge</ion-col>
+                     <ion-col>£ 0.00/ion-col>
+                 </ion-row>
+                 <ion-row class="row2">
+                     <ion-col>Items Total</ion-col>
+                     <ion-col>£ 4.50</ion-col>
+                 </ion-row-->
+
+           </ion-list>
+        </ion-list>
+    </ion-card>
+</ion-content>
